@@ -1,0 +1,88 @@
+namespace Assignment1
+{
+    using System;
+    public class Watch
+    {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="year">Year entered by user</param>
+        /// <param name="month">Month entered by user</param>
+        /// <param name="day">Day entered by user</param>
+        public Watch(int year, int month, int day)
+        {
+            DateTime dateTime = new DateTime(year, month, day);
+            DateTime currentTime = DateTime.Now;
+            Console.WriteLine("Day:{0}", dateTime.Day);
+            Console.WriteLine("Month:{0}", dateTime.Month);
+            Console.WriteLine("Year:{0}", dateTime.Year);
+            Console.WriteLine("Day in Month:{0}", dateTime.Day);
+            Console.WriteLine("Day of Week:{0}", dateTime.DayOfWeek);
+            Console.WriteLine("Total number of days in month:{0}", DateTime.DaysInMonth(year, month));
+            Console.WriteLine("Days in Year: {0}", GetDaysInAYear(year));
+            Console.WriteLine("{0}", IsLeapYear(year));
+            Console.WriteLine("Current Time:{0}", currentTime.ToString("t"));
+            Console.Read();
+        }
+
+        /// <summary>
+        /// Function to evalute total number of days in a year
+        /// </summary>
+        /// <param name="year">Year entered by user</param>
+        /// <returns>Returns total number of days in a year</returns>
+        public int GetDaysInAYear(int year)
+        {
+            int days = 0;
+            for (int i = 1; i <= 12; i++)
+            {
+                days += DateTime.DaysInMonth(year, i);
+            }
+            return days;
+        }
+
+        /// <summary>
+        /// Function to check year,day and month is valid or not
+        /// </summary>
+        /// <param name="year">Year entered by user</param>
+        /// <param name="month">Month entered by user</param>
+        /// <param name="day">Day entered by user</param>
+        /// <returns>Returns true if valid date else false</returns>
+        public static bool IsValid(int year, int month, int day)
+        {
+            return ((year >= 1) && (year <= 9999) && (month <= 12) && (month >= 1) && (day >= 1) && (day <= DateTime.DaysInMonth(year, month))) ;
+        }
+
+        /// <summary>
+        /// Function to check given year is Leap year or not
+        /// </summary>
+        /// <param name="year">Year entered by user</param>
+        /// <returns>Returns given year is leap year or not</returns>
+        public string IsLeapYear(int year)
+        {
+            if (DateTime.IsLeapYear(year))
+                return "Leap Year";
+            else
+                return "Not Leap Year";
+        }
+
+        public static void Main()
+        {
+            Console.Write("Enter Year,Month and Day Respectively.....");
+
+            //Get Inputs from user
+            int year = Convert.ToInt32(Console.ReadLine());
+            int month = Convert.ToInt32(Console.ReadLine());
+            int day = Convert.ToInt32(Console.ReadLine());
+            if (IsValid(year, month, day))
+            {
+                //Calling Constructor
+                new Watch(year, month, day);
+            }
+            else
+            {
+                Console.Write("Format Is Not Valid");
+                Console.Read();
+            }
+        }
+    }
+}
