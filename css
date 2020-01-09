@@ -1,0 +1,276 @@
+  * {
+    font-family: Roboto;
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+}
+
+.plangap{
+    display:flex;
+}
+
+.location {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.location1 {
+    float: left;
+    display: flex;
+}
+
+
+.map-logo {
+    width: auto;
+    height: 20px;
+    margin: auto;
+    margin-right: 3px;
+}
+
+
+.banner {
+    background-image: url("images/banner3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    background-position: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,                                 rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%);
+    
+}
+
+
+.navigation-bar {
+    position: fixed;
+    top: 0px;
+    width: 95%; /* i'm assuming full width */
+    height: 80px; /* change it to desired width */
+    background-color: transparent; /* change to desired color */
+    margin-left: 20px;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px; /* if you want it vertically middle of the navbar. */
+}
+
+.navigation-bar > a {
+    display: inline-block;
+    vertical-align: top;
+    list-style-type: none;
+    margin-right: 20px;
+    height: 80px;
+    color: #fff;
+    font-weight: bold; /* if you want it to take the full height of the bar */
+    line-height: 100px; /* if you want it vertically middle of the navbar */
+}
+
+.login {
+    margin-top: 20px;
+    float: right;
+    width: 80px;
+    color: #fff;
+    border:1px solid #fff;
+
+    background-color: transparent;
+}
+
+.line {
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top:-4px;
+    border: 1px solid #ccc;
+    opacity: 1;
+}
+
+.title {
+    color: #fff;
+    font-size: 48px;
+    position: absolute;
+    font-weight:bolder;
+    left: 35%;
+    top: 300px;
+}
+
+.view-photos {
+    position: absolute;
+    top: 40%;
+    margin-left: 20px;
+    border: none;
+    color: #00acc1;
+    padding: 13px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+h2{
+    font-size:36px;
+   font-weight:bold;
+   color:#00acc1;
+   float:left;
+}
+h4{
+    color:#e53b51;
+    font-size:25px;
+    margin-top:3%; 
+}
+
+.content-flex {
+    display: flex;
+  
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.input-icons img {
+    position: absolute;
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form {
+    background-color: #00acc1;
+    margin-top: 40px;
+    width: 350px;
+    color: #fff;
+}
+
+.btn{
+    margin-top:5%;
+    width:100%;
+}
+
+h6{
+    font-size:15px;
+    
+}
+
+.form p{
+    margin-top:10px;
+}
+span{
+    background-color:lightblue;
+}
+ a{
+    text-decoration:underline;
+    color:#fff;
+}
+
+ h3{
+     color:#00acc1;
+     font-weight:bold;
+     font-size:20px;
+ }
+ p{
+     color:#3d3d3d;
+     font-size:14px;
+ }
+ .icon-margin{
+     margin-left:30px;
+ }
+ .content-margin{
+     margin-top:20px;
+ }
+.navigation-bar-2 {
+    right:0;
+}
+
+.border{
+    border:1px solid black;
+}
+
+.icons{
+    margin-top:25px;
+}
+
+.difference{
+    text-align:center;
+}
+
+.included h4{
+    background-color:#00acc1;
+    color:#fff;
+}
+.not-included h4{
+   background-color:#e53b51;
+   color:#fff;
+}
+
+.included img{
+    height:16px;
+    width:16px;
+}
+.not-included img{
+    height:16px;
+    width:16px;
+}
+tr b{
+    color:#e53b51;
+}
+
+table th{
+    color:#fff;
+    background-color:#00acc1;
+}
+
+.vl {
+    border-left: 2px solid #ccc;
+    height: 35px;
+}
+
+
+.costDuration {
+    border: 1px solid;
+    height: 60px;
+    display: flex;
+    align-content:center
+}
+
+
+
+    .costDuration div {
+        display: flex;
+        margin: 15px;
+    }
+
+        .costDuration div h2 {
+            margin-top: 3px;
+            font-size: 24px;
+            margin-left: 10px;
+            margin-right: 25px;
+        }
+        .costDuration div h3 {
+            margin-top: 3px;
+            font-size: 24px;
+            margin-left: 10px;
+       
+        }
+
+
+
+        .page-footer{
+            background-color:#3d3d3d;
+            height:100px;
+            }
+        .page-footer img{
+            margin-top:20px;
+        }
+        .page-footer a{
+            color:white;
+            float:right;
+            margin-right:15px;
+            margin-top:50px;
+        }
+        
