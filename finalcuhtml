@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <script src="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>Contact us</title>
+</head>
+
+<body>
+    
+        <div class="container-fluid banner-contactus">
+
+            <header>
+                <nav class="navbar navbar-expand-sm navbar-static-top fixed-top">
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <img src="images/logo_1.png" />
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-link" href="#">HOW IT WORKS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-link" href="#">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="login ml-auto mt-4">Login</button>
+
+                </nav>
+
+
+
+            </header>
+            <h1 class="title">Contact Us</h1>
+
+
+
+
+        </div>
+        <div class="contact-p">
+            <p>Got questions for your Volunteer Overseas team? No problem! We've got answers...or at least the best guidance to help you book your dream program abroad. Don't hesitate to drop us a line, and your trusted Volunteer Overseas travel guides will get back to you in record time. Thank you! </p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" class="form-control " name="name" value="" placeholder="Name" />
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control justify-content-end" name="" value="" placeholder="your@email" />
+                </div>
+                </div>
+            <div class="textarea"> <textarea class="justify-content-center form-control mt-3" rows="12" placeholder="message"></textarea></div>
+            <div class="text-center mt-3">
+                <button class="sendButton" value="">Send</button>
+            </div>
+        </div>
+    
+   
+    <footer class="footer">
+
+        <div class="container-fluid page-footer mt-5">
+
+            <img src="images/logo_1.png" height="50" width="200" />
+            <a href="ContactUs.html">CONTACT US</a>
+            <a href="FAQ.html">FAQ</a>
+
+        </div>
+
+    </footer>
+
+
+
+</body>
+</html>
