@@ -96,8 +96,9 @@ header {
     background-color: white;
 }
 
+.costDuration{
+ border:1px solid black;
 }
-
 
 
 
@@ -162,11 +163,15 @@ iframe{
 
 .verticle-line {
     border-left: 2px solid #ccc;
+    
 }
+
+
 
 .included h4 {
     background-color: #00acc1;
     color: #fff;
+    margin-right:-14px;
 }
 
 .container p {
@@ -177,6 +182,7 @@ iframe{
 .not-included h4 {
     background-color: #e53b51;
     color: #fff;
+    margin-left: -14px;
 }
 
 .included img {
@@ -189,6 +195,9 @@ iframe{
     width: 16px;
 }
 
+.not-included .verticle-line{
+    margin-left: -15px;
+}
 .difference {
     text-align: center;
 }
@@ -214,6 +223,23 @@ table th {
 .date-logo {
     background-color: #fff;
     padding: 8px;
+}
+
+.mapIcon {
+    height: 25px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+
+}
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail div{
+
+        margin-right:25px;
+
 }
 
 
@@ -355,14 +381,17 @@ nav img {
 
 .navigation {
    
-    display: flex;
-    justify-content: space-around;
+ width: 100%;
+    
     border-top: 1.2px solid #ccc;
 }
 
+.navigation div{
+    width: 20%;
+}
     .navigation a {
         color: #00acc1;
-        padding: 4px 35px;
+       
     }
 
         .navigation a:hover {
@@ -371,10 +400,7 @@ nav img {
             text-decoration: none;
         }
 
-    .navigation a {
-        padding: 1px;
-        font-size: 15px;
-    }
+    
 
 .cost > div {
     position: relative;
@@ -537,19 +563,7 @@ nav img {
         font-size: 15px;
     }
 
-    .detail img {
-        height: 20px;
-        width: 20px;
-    }
-
-    .detail p {
-        font-size: 13px;
-    }
-
-    .detail {
-        display: flex;
-        flex-wrap: wrap;
-    }
+ 
 
     .navigation a{
         font-size:10px;
@@ -561,14 +575,23 @@ nav img {
     .costDuration img{
           height:20px;
           width:20px;
+
+
     }
     .costDuration .duration  h2{
         font-size:15px;
     }
+    .costDuration div{
+        display: grid !important;
+    }
 
-   .costDuration{
-       display:flex;
-       display:grid;
-   }
+ 
+   .detail div img{
+        display:block;
+    }
+    .detail div {
+        margin-right: 10px;
+        max-width:50%;
+    }
 
 }
