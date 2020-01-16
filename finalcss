@@ -1,34 +1,50 @@
-*{
-    font-family:roboto;
-    
+* {
+    font-family: roboto;
+    margin: 0px;
+    padding: 0px;
 }
+
 .banner {
-    background-repeat: no-repeat;
-    height: 470px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/banner3.jpg');
+    position: relative;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/banner3.jpg');
 }
 
-    .container-fluid nav {
-      
-        border-bottom: 1px solid rgba(255, 255, 255, .5);
-        height: 85px;
+.container {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00acc1;
+    float: left;
+}
+
+header {
+    height: 400px;
+}
+
+
+    header img {
+        min-width: 20px;
     }
 
-    .container-fluid ul {
-        list-style-type: none;
-    }
-    .container-fluid ul li a {
-        text-decoration: none;
-        display: inline-block;
-        margin-right: 20px;
-        margin-left: 30px;
-        color: #fff;
-        font-weight: bold; /* if you want it to take the full height of the bar */
-        line-height: 90px;
+    header nav {
+        border-bottom: 1px solid white;
+        margin-top: 10px;
     }
 
+    header h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-weight: 500;
+        font-size: 48px;
+    }
 
 .login {
     width: 80px;
@@ -39,31 +55,7 @@
     border-radius: 4px;
 }
 
-.navbarNav {
-    max-width: 100%;
-    
-}
 
-    /* Navigation links */
-    .navbarNav a {
-        float: left;
-        padding: 12px;
-        color: #00acc1;
-        text-decoration: none;
-        font-size: 17px;
-        max-width: 20%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
-        text-align: center; /* If you want the text to be centered */
-    }
-
-        /* Add a background color on mouse-over */
-        .navbarNav a:hover {
-            background-color: #e53b51;
-            color:#fff;
-            text-decoration:none;
-        }
-       .top-line{
-           border-top:1px solid #3d3d3d;
-       }
 
 .title {
     color: #fff;
@@ -75,14 +67,14 @@
     text-align: center;
 }
 
-.location{
-    display:flex;
-    justify-content:flex-start;
+.location {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.location div {
-    display: flex;
-}
+    .location div {
+        display: flex;
+    }
 
 
 .plangap {
@@ -91,23 +83,23 @@
 
 
 .view-photos {
-    margin-top:300px;
-    margin-left: 20px;
-    border: none;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
     color: #00acc1;
-    padding: 13px 14px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
+    font-size: 17px;
+    height: 50px;
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 19px;
+    border-radius: 5px;
+    background-color: white;
+}
+
 }
 
 
-.container h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #00acc1;
-    float: left;
-}
+
 
 .container h3 {
     color: #e53b51;
@@ -123,18 +115,18 @@
 }
 
 
-.loc{
-   display:inline;
+.loc {
+    display: inline;
 }
-@media screen and (max-width: 600px) {
-    .loc {
-        display:block;
-    }
-}
+
 .map-logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
+  height:25px;
+  width:22px;
+  
+}
+
+.size-duration{
+    width:100%;
 }
 
     .map-logo img {
@@ -144,62 +136,25 @@
     }
 
 
-.detail{
-    width:85%;
-}
-.content-flex {
-    display: flex;
-}
 
-.content-margin {
-    margin-top: 20px;
-}
 
-.icon-margin {
-    margin-left: 30px;
+.video{
+    height:auto;
+    width:100%;
 }
 
 
-
-
-
-
+iframe{
+    height:500px;
+    width:100%;
+}
 
 .map-location {
     float: left;
     display: flex;
 }
 
-.costDuration {
-    border: 1px solid;
-    height: 60px;
-    display: flex;
-    align-content: center
-}
 
-
-
-    .costDuration div {
-        display: flex;
-        margin: 15px;
-    }
-
-        .costDuration div h2 {
-            margin-top: 3px;
-            font-size: 24px;
-            margin-left: 10px;
-            margin-right: 25px;
-        }
-
-        .costDuration div h3 {
-            margin-top: 3px;
-            font-size: 24px;
-            margin-left: 10px;
-        }
-
-    .costDuration select {
-        width: 150px;
-    }
 
 .border {
     border: 1px solid #ccc;
@@ -214,9 +169,9 @@
     color: #fff;
 }
 
-.container p{
-    font-size:14px;
-    color:#3d3d3d;
+.container p {
+    font-size: 14px;
+    color: #3d3d3d;
 }
 
 .not-included h4 {
@@ -256,16 +211,18 @@ table th {
     margin-bottom: 10px;
 }
 
-
+.date-logo {
+    background-color: #fff;
+    padding: 8px;
+}
 
 
 
 .form {
     background-color: #00acc1;
     margin-top: 40px;
-    
     color: #fff;
-    height:100%;
+    height: 100%;
 }
 
 .btn {
@@ -319,24 +276,21 @@ span {
 /*contact us*/
 
 .banner-contactus {
-    background-repeat: no-repeat;
-    width:100%;
-    height: 470px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/contact-banner.jpg');
+    position: relative;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/contact-banner.jpg');
 }
 
-.contact-p{
-    margin:0px 100px;
-    font-size:19px;
-    color:#3d3d3d;
+.contact-p {
+    margin: 0px 100px;
+    font-size: 19px;
+    color: #3d3d3d;
 }
 
-.container textarea{
-    width:100%;
-    height:1200px;
-
+.container textarea {
+    width: 100%;
+    height: 1200px;
 }
 
 .textarea ::-webkit-input-placeholder {
@@ -347,7 +301,7 @@ span {
     width: 90px;
     color: #fff;
     padding: 10px;
-    background-color:#e53b51;
+    background-color: #e53b51;
     border-radius: 4px;
 }
 
@@ -355,45 +309,266 @@ span {
 /* FAQ */
 
 .banner-faq {
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 470px;
+    position: relative;
     background-size: cover;
     background-position: center;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/faq-banner.jpg');
 }
 
-.accordion h5{
-    color:#00acc1;
-    font-size:32px;
+
+
+.accordion h5 {
+    color: #00acc1;
+    font-size: 32px;
 }
 
-.card-body p{
-font-size:21px;
-color:#3d3d3d;
+.card-body p {
+    font-size: 21px;
+    color: #3d3d3d;
 }
 
-.card-header a:hover{
-    text-decoration:none;
+.card-header a:hover {
+    text-decoration: none;
 }
 
 .card-header p {
-font-size:32px;
-
-}
-@media screen and (max-device-width:620px) ,screen and (max-width: 620px){
-    .view-photos{
-        float:right;
-        margin-top:320px;
-    }
-    .title{
-        font-size:32px;
-    }
-    .login{
-        display:none;
-    }
+    font-size: 32px;
 }
 
-nav img{
-    max-width:100%;
+nav img {
+    max-width: 100%;
+}
+/*Media Queries*/
+
+
+.accordion .arrow {
+    margin-right: 0.5rem;
+    float: right;
+}
+
+.arrow-up {
+    transform: rotate(180deg);
+}
+
+
+
+
+.navigation {
+   
+    display: flex;
+    justify-content: space-around;
+    border-top: 1.2px solid #ccc;
+}
+
+    .navigation a {
+        color: #00acc1;
+        padding: 4px 35px;
+    }
+
+        .navigation a:hover {
+            background-color: #e53b51;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .navigation a {
+        padding: 1px;
+        font-size: 15px;
+    }
+
+.cost > div {
+    position: relative;
+    border: 0.6px solid #ccc;
+    width: 100%;
+    height: 150px;
+}
+
+/* Responsive Contact us  Mobiles*/
+@media (min-width: 320px) and (max-width: 480px) {
+    .banner-contactus {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/contact-banner-mobile.jpg');
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .contact-p {
+        margin-left: 15px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+    input[type=email] {
+        margin-top: 8px;
+    }
+
+    .contactus button {
+        width: 100%;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .contactus {
+        margin-bottom: 230px;
+    }
+}
+/* Responsive contact us Tablets*/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+        display: none;
+    }
+
+    .contact-p {
+        margin-top: 20px;
+        margin-left: 35px;
+        font-size: 16px;
+    }
+}
+/*Responsive FAQ  mobiles*/
+@media (min-width: 320px) and (max-width: 480px) {
+    .arrow-up, .arrow-down {
+        height: 30px;
+        width: 30px;
+    }
+
+    .card-header h5 {
+        font-size: 15px;
+        margin-left: 0px;
+    }
+
+    .card-header a {
+        margin-left: 0px;
+    }
+
+    .card-body p {
+        font-size: 12px;
+    }
+
+    .faq {
+        margin-bottom: 100px;
+    }
+}
+/*Responsive faq tablets*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer {
+        display: none;
+    }
+
+    .faq {
+        margin-bottom: 100px;
+    }
+
+    .card-header h5 {
+        font-size: 26px;
+    }
+
+    .card-body p {
+        font-size: 20px;
+    }
+
+    .arrow-up, .arrow-down {
+        height: 34px;
+        width: 34px;
+    }
+}
+
+/*Responsive index mobile*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .banner {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/banner4.jpg');
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    .banner h1 {
+        font-size: 23px;
+        font-weight: 700;
+        margin-top: 20%;
+    }
+
+    .view-photos {
+        margin-left: 50%;
+        width: 40%;
+        font-size: 80%;
+    }
+
+    .location {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container h2 {
+        font-size: 22px;
+    }
+    .container h4 {
+        font-size:18px;
+    }
+    .container p{
+        font-size:12px;
+    }
+
+    .place-location {
+        margin-left: 2%;
+    }
+
+        .map-logo {
+            height: 20px;
+            width: 15px;
+        }
+
+        .container h3 {
+            font-size: 15px;
+        }
+
+    .plangap img {
+        height: 70px;
+    }
+
+    .plangap h2 {
+        font-size: 15px;
+    }
+
+    .detail img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .detail p {
+        font-size: 13px;
+    }
+
+    .detail {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .navigation a{
+        font-size:10px;
+    }
+    .navigation{
+        margin-bottom:10px;
+    }
+    
+    .costDuration img{
+          height:20px;
+          width:20px;
+    }
+    .costDuration .duration  h2{
+        font-size:15px;
+    }
+
+   .costDuration{
+       display:flex;
+       display:grid;
+   }
+
 }
