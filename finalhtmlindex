@@ -90,37 +90,27 @@
                 </div>
                 <!-- Third -->
 
-                <div class="d-flex justify-content-start align-self-start detail">
-
-                    <div class="justify-content-start ">
-                        <img src="images/icon1.png" height="20" width="25" />
+                <div class="my-4 detail">
+                    <div>
+                        <img src="Images/icon1.png" class="mapIcon" />From $714 from 2 weeks
                     </div>
-                    <div class="justify-content-start align-self-center ml-2">
-                        <p>From $714 for 2 weeks</p>
+                    <div>
+                        <img src="Images/icon2.png" class="mapIcon" />2-24 weeks
                     </div>
-
-                    <div class="justify-content-start">
-                        <img src="images/icon2.png" height="20" width="20" class="ml-4" />
-                    </div>
-                    <div class="justify-content-end">
-                        <p class="ml-2">2-24 Weeks</p>
-                    </div>
-                    <div class="justify-content-start">
-                        <img src="images/icon4.png" height="20" width="20" class="ml-4" />
-                    </div>
-                    <div class="justify-content-end">
-                        <p class="ml-1">18 And Older</p>
+                    <div>
+                        <img src="Images/icon4.png" class="mapIcon" />18 and older
                     </div>
                 </div>
 
                 <br />
                 <!-- Navigation -->
-                <div class="navigation">
-                    <a href="#Description" class="navbar-link">DESCRIPTION</a>
-                    <a href="#Location" class="navbar-link">LOCATION</a>
-                    <a href="#Cost" class="navbar-link">COST</a>
-                    <a href="#Date" class="navbar-link">DATE</a>
-                    <a href="#Organization" class="navbar-link">ORGANIZATION</a>
+                <div class="navigation d-flex">
+
+                    <div><a href="#Description" class="navbar-link">DESCRIPTION</a></div>
+                    <div><a href="#Location" class="navbar-link">LOCATION</a></div>
+                    <div><a href="#Cost" class="navbar-link">COST</a></div>
+                    <div><a href="#Date" class="navbar-link">DATE</a></div>
+                    <div><a href="#Organization" class="navbar-link">ORGANIZATION</a></div>
                 </div>
                 <!-- Description -->
                 <div class="d-flex" id="Description"><h2>Description</h2></div>
@@ -160,10 +150,10 @@
                 <div class="d-flex" id="Cost"><h2>Cost</h2></div>
                 <p>The cost listed below includes a registration fee of $193.00.The remiander of program fee is due 60 days prior to the start of your program.</p>
 
-                <div class="d-flex border costDuration">
+                <div class="costDuration d-flex">
                     
-                    <div class="d-flex" style="width:50%;">
-                        <img src="images/icon2.png" height="25" width="25" class="mt-1 ml-3"/>
+                    <div class="col-lg-6 d-flex">
+                        <img src="images/icon2.png" height="25" width="25" class=""/>
 
                         <h2>Duration</h2>
                         <select class="border">
@@ -173,10 +163,9 @@
                         </select>
 
                     </div>
-                    <div class="d-flex verticle-line" style="width:50%;">
-                        <img src="images/icon1.png" height="25" width="25" class="mt-1 ml-3"/>
-
-
+                    <div class="col-lg-6 d-flex verticle-line">
+                        <img src="images/icon1.png" height="25" width="25" class=""/>
+ 
                         <h2>
                             Cost:
                         </h2>
@@ -192,16 +181,18 @@
                 <div class="row">
                     <div class="col-md-6 included">
                         <h4 class="difference">What's Included</h4>
+           <div >
                         <img src="images/new-tick.png" />a <br />
                         <img src="images/new-tick.png" />b <br />
                         <img src="images/new-tick.png" />c <br />
                         <img src="images/new-tick.png" />d <br />
                         <img src="images/new-tick.png" />e <br />
                         <img src="images/new-tick.png" />f <br />
+                </div>
                     </div>
-                    <div class=" col-md-6 not-included verticle-line">
+                    <div class=" col-md-6 not-included">
                         <h4 class="difference">What's not included</h4>
-
+<div class="verticle-line">
                         <img src="images/non-check.png" />a <br />
                         <img src="images/non-check.png" />b<br />
                         <img src="images/non-check.png" />c<br />
@@ -209,6 +200,7 @@
                         <img src="images/non-check.png" />e<br />
                         <img src="images/non-check.png" />f<br />
                     </div>
+     </div>
                 </div>
 
                 <hr />
