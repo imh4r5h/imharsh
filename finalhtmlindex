@@ -23,6 +23,14 @@
         $("#normal_select").dropkick({
             mobile: true
         });
+
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".navbar-fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+
     </script>
 
 
@@ -108,7 +116,7 @@
                     <div class="flex-item"><a href="#Description" class="navbar-link">DESCRIPTION</a></div>
                     <div class="flex-item"><a href="#Location" class="navbar-link">LOCATION</a></div>
                     <div class="flex-item"><a href="#Cost" class="navbar-link">COST</a></div>
-                    <div class="flex-item"><a href="#Date" class="navbar-link">DATE</a></div>
+                    <div class="flex-item"><a href="#Dates" class="navbar-link">DATE</a></div>
                     <div class="flex-item"><a href="#Organization" class="navbar-link">ORGANIZATION</a></div>
                 </div>
                 <!-- Description -->
@@ -136,7 +144,7 @@
                 </video>
                 <hr>
                 <!-- Location -->
-                <div class="d-flex">
+                <div class="d-flex" id="Location">
                     <h2>Location</h2>
                 </div>
                 <div class="d-inline-flex">
@@ -185,12 +193,12 @@
                         <h4 class="pl-4">What's Included</h4>
                         <div>
                             <div class="ml-4">
-                                <img src="images/new-tick.png" />a <br />
-                                <img src="images/new-tick.png" />b <br />
-                                <img src="images/new-tick.png" />c <br />
-                                <img src="images/new-tick.png" />d <br />
-                                <img src="images/new-tick.png" />e <br />
-                                <img src="images/new-tick.png" />f <br />
+                                <img src="images/new-tick.png" class="mb-2"/>Accommodation (Volunteer House)  <br />
+                                <img src="images/new-tick.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner) <br />
+                                <img src="images/new-tick.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner) <br />
+                                <img src="images/new-tick.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner) <br />
+                                <img src="images/new-tick.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner) <br />
+                                <img src="images/new-tick.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner) <br />
                             </div>
                         </div>
                     </div>
@@ -198,12 +206,12 @@
                         <h4 class="pl-4">What's not included</h4>
                         <div class="verticle-line">
                             <div class="ml-4">
-                                <img src="images/non-check.png" />a <br />
-                                <img src="images/non-check.png" />b<br />
-                                <img src="images/non-check.png" />c<br />
-                                <img src="images/non-check.png" />d<br />
-                                <img src="images/non-check.png" />e<br />
-                                <img src="images/non-check.png" />f<br />
+                                <img src="images/non-check.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner) <br />
+                                <img src="images/non-check.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner)<br />
+                                <img src="images/non-check.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner)<br />
+                                <img src="images/non-check.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner)<br />
+                                <img src="images/non-check.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner)<br />
+                                <img src="images/non-check.png" class="mb-2"/>Meals (Breakfast, Lunch & Dinner)<br />
                             </div>
                         </div>
                     </div>
