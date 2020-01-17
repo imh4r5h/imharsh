@@ -114,6 +114,7 @@ header h1 {
 .flex-item{
     flex-grow:1;
     text-align:center;
+    padding:6px 0px;
 }
 
 .flex-item:hover {
@@ -148,7 +149,7 @@ iframe {
 }
 
 .costDuration h2{
-    font-size:25px;
+    font-size:24px !important;
     margin-top:4px;
 }
 
@@ -574,6 +575,9 @@ nav img {
    
     .flex-item a{
         font-size:10px;
+    }
+    .flex-item{
+        padding:3px 0px;
     }
     .dropkick{
         margin:10px 0px;
