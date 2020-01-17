@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-
+    <link href="dropkick.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
+    <script src="dropkick.js"></script>
     <script src="script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -18,12 +19,12 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
 
     <link href="C:\Users\pci178\Downloads\font-awesome-4.7.0\font-awesome-4.7.0\css\font-awesome.min.css" rel="stylesheet" />
-
     <script>
-        $(function () {
-            $("#datepicker").datepicker();
+        $("#normal_select").dropkick({
+            mobile: true
         });
     </script>
+
 
     <title>Volunteers Overseas</title>
 </head>
@@ -34,23 +35,23 @@
         <header>
             <nav class="navbar navbar-expand-md fixed-top">
                 <img src="images/logo_1.png" alt="Alternate Text" class="logo" />
-                <button class="navbar-toggler border-white" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler border-white menu" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><img src="images/menu.svg" /></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-5 mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link text-white font-weight-bold" href="#">HOW IT WORKS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white font-weight-bold" href="#">CONTACT US</a>
+                            <a class="nav-link text-white font-weight-bold" href="ContactUs.html">CONTACT US</a>
                         </li>
 
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
 
-                        <button class="btn btn-outline-primary my-2 my-sm-0 text-white border-white" type="submit">Login</button>
+                        <button class="btn  my-2 my-sm-0 text-white border-white" type="submit">Login</button>
                     </form>
                 </div>
             </nav>
@@ -68,16 +69,14 @@
 
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-8 mr-auto">
+            <div class="col-lg-8 mr-auto">
                 <!-- First -->
-                <div class="d-flex location">
-                    <div class="justify-content-start">
-                        <h2>Ghana Medical volunteers</h2>
-                    </div>
-                    <div class="justify-content-end mt-2 place-location" style="width:35%;">
-                        <img src="images/map.png" class="map-logo" />
-                        <h3>Kumasi,Ghana</h3>
-                    </div>
+                <div class="location">
+
+                    <div><h2>Ghana Medical Volunteers</h2></div>
+
+                    <div class="text-danger khumasi"><img src="Images/map.png" class="Icon" />Khumasi, Ghana</div>
+
                 </div>
                 <!-- Second -->
                 <div class="plangap">
@@ -90,30 +89,30 @@
                 </div>
                 <!-- Third -->
 
-                <div class="my-4 detail">
+                <div class="my-2 detail">
                     <div>
-                        <img src="Images/icon1.png" class="mapIcon" />From $714 from 2 weeks
+                        <img src="Images/icon1.png" class="Icon" />From $714 from 2 weeks
                     </div>
                     <div>
-                        <img src="Images/icon2.png" class="mapIcon" />2-24 weeks
+                        <img src="Images/icon2.png" class="Icon" />2-24 weeks
                     </div>
                     <div>
-                        <img src="Images/icon4.png" class="mapIcon" />18 and older
+                        <img src="Images/icon4.png" class="Icon" />18 and older
                     </div>
                 </div>
 
                 <br />
                 <!-- Navigation -->
-                <div class="navigation d-flex">
+                <div class="d-flex navigation">
 
-                    <div><a href="#Description" class="navbar-link">DESCRIPTION</a></div>
-                    <div><a href="#Location" class="navbar-link">LOCATION</a></div>
-                    <div><a href="#Cost" class="navbar-link">COST</a></div>
-                    <div><a href="#Date" class="navbar-link">DATE</a></div>
-                    <div><a href="#Organization" class="navbar-link">ORGANIZATION</a></div>
+                    <div class="flex-item"><a href="#Description" class="navbar-link">DESCRIPTION</a></div>
+                    <div class="flex-item"><a href="#Location" class="navbar-link">LOCATION</a></div>
+                    <div class="flex-item"><a href="#Cost" class="navbar-link">COST</a></div>
+                    <div class="flex-item"><a href="#Date" class="navbar-link">DATE</a></div>
+                    <div class="flex-item"><a href="#Organization" class="navbar-link">ORGANIZATION</a></div>
                 </div>
                 <!-- Description -->
-                <div class="d-flex" id="Description"><h2>Description</h2></div>
+                <div class="d-flex mt-3" id="Description"><h2>Description</h2></div>
                 <h4>Overview</h4>
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
@@ -141,7 +140,7 @@
                     <h2>Location</h2>
                 </div>
                 <div class="d-inline-flex">
-                    <div class="justify-content-start"><img src="images/map.png" class="map-logo" /></div>
+                    <div class="justify-content-start"><img src="images/map.png" class="Icon" /></div>
                     <div class="justify-content-start align-self-center"><h3> Kumasi,Ghana</h3></div>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.698030164969!2d72.49826931542346!3d23.034857121648074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8352e403437b%3A0xdc9d4dae36889fb9!2sTatvaSoft!5e0!3m2!1sen!2sin!4v1578559328551!5m2!1sen!2sin" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
@@ -151,26 +150,29 @@
                 <p>The cost listed below includes a registration fee of $193.00.The remiander of program fee is due 60 days prior to the start of your program.</p>
 
                 <div class="costDuration d-flex">
-                    
+
                     <div class="col-lg-6 d-flex">
-                        <img src="images/icon2.png" height="25" width="25" class=""/>
+                        <img src="images/icon2.png" height="25" width="25" class="mt-2" />
 
                         <h2>Duration</h2>
-                        <select class="border">
-                            <option value="2">2 Weeks</option>
-                            <option value="3">3 Weeks</option>
-                            <option value="4">4 Weeks</option>
+                        <select id="normal_select " class="form-control mt-2">
+                            <option disabled selected class="hidden-option">Choose One</option>
+                            <option value="">1 Week</option>
+                            <option value="">2 Weeks</option>
+                            <option value="">3 Weeks</option>
+
                         </select>
+
 
                     </div>
                     <div class="col-lg-6 d-flex verticle-line">
-                        <img src="images/icon1.png" height="25" width="25" class=""/>
- 
+                        <img src="images/icon1.png" height="25" width="25" class="mt-2" />
+
                         <h2>
                             Cost:
                         </h2>
 
-                        <h3>
+                        <h3 class="m-auto">
                             $714
                         </h3>
                     </div>
@@ -178,29 +180,33 @@
 
 
                 <!-- Table -->
-                <div class="row">
+                <div class="row difference">
                     <div class="col-md-6 included">
-                        <h4 class="difference">What's Included</h4>
-           <div >
-                        <img src="images/new-tick.png" />a <br />
-                        <img src="images/new-tick.png" />b <br />
-                        <img src="images/new-tick.png" />c <br />
-                        <img src="images/new-tick.png" />d <br />
-                        <img src="images/new-tick.png" />e <br />
-                        <img src="images/new-tick.png" />f <br />
-                </div>
+                        <h4 class="pl-4">What's Included</h4>
+                        <div>
+                            <div class="ml-4">
+                                <img src="images/new-tick.png" />a <br />
+                                <img src="images/new-tick.png" />b <br />
+                                <img src="images/new-tick.png" />c <br />
+                                <img src="images/new-tick.png" />d <br />
+                                <img src="images/new-tick.png" />e <br />
+                                <img src="images/new-tick.png" />f <br />
+                            </div>
+                        </div>
                     </div>
                     <div class=" col-md-6 not-included">
-                        <h4 class="difference">What's not included</h4>
-<div class="verticle-line">
-                        <img src="images/non-check.png" />a <br />
-                        <img src="images/non-check.png" />b<br />
-                        <img src="images/non-check.png" />c<br />
-                        <img src="images/non-check.png" />d<br />
-                        <img src="images/non-check.png" />e<br />
-                        <img src="images/non-check.png" />f<br />
+                        <h4 class="pl-4">What's not included</h4>
+                        <div class="verticle-line">
+                            <div class="ml-4">
+                                <img src="images/non-check.png" />a <br />
+                                <img src="images/non-check.png" />b<br />
+                                <img src="images/non-check.png" />c<br />
+                                <img src="images/non-check.png" />d<br />
+                                <img src="images/non-check.png" />e<br />
+                                <img src="images/non-check.png" />f<br />
+                            </div>
+                        </div>
                     </div>
-     </div>
                 </div>
 
                 <hr />
@@ -221,10 +227,31 @@
                         <th>February 2018</th>
                         <th>March 2018</th>
                         <th>April 2018</th>
+                        <th>May 2018</th>
+                        <th>June 2018</th>
+                        <th>July 2018</th>
+                        <th>August 2018</th>
+                        <th>September 2018</th>
                     </tr>
                     <tr>
                         <td><b>07</b> Sundays</td>
                         <td><b>08</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>08</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                    </tr>
+                    <tr>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>08</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>08</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
                         <td><b>07</b> Sundays</td>
                         <td><b>04</b> Sundays</td>
                     </tr>
@@ -233,7 +260,24 @@
                         <td><b>08</b> Sundays</td>
                         <td><b>07</b> Sundays</td>
                         <td><b>04</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>08</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
                     </tr>
+                    <tr>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>08</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>08</b> Sundays</td>
+                        <td><b>07</b> Sundays</td>
+                        <td><b>04</b> Sundays</td>
+                    </tr>
+
                 </table>
 
                 <hr />
@@ -247,7 +291,7 @@
                 </p>
 
             </div>
-            <div class="col-md-4 form">
+            <div class="col-lg-4 form">
                 <form action="#" method="post">
                     <p><span><b>23 people</b> are reaserching this project</span></p>
                     <label>Project start date</label>
@@ -257,13 +301,14 @@
                             <img src="images/icon3.png" class="date-logo" />
 
                         </div>
-                        <input type="text" class="form-control " id="datepicker" placeholder="dd/mm/yyyy">
+                        <input type="text" class="form-control " id="datepicker" placeholder="dd/mm/yyyy" onfocus="DatePicker()">
                     </div>
                     <label>Duration</label><br />
-                    <select class="form-control">
-                        <option value="2">2 Weeks</option>
-                        <option value="3">3 Weeks</option>
-                        <option value="4">4 Weeks</option>
+                    <select id="normal_select " class="form-control mt-2">
+                        <option disabled selected class="hidden-option">Choose One</option>
+                        <option value="">1 Week</option>
+                        <option value="">2 Weeks</option>
+                        <option value="">3 Weeks</option>
 
                     </select><br />
 
