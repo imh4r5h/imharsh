@@ -2,49 +2,31 @@
     font-family: roboto;
     margin: 0px;
     padding: 0px;
-}
-
-.banner {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/banner3.jpg');
-    position: relative;
-    background-size: cover;
-    background-position: center;
-}
-
-.container {
-    margin-top: 20px;
-}
-
-h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #00acc1;
-    float: left;
+    box-sizing:border-box;
 }
 
 header {
     height: 400px;
 }
 
+header img {
+    min-width: 20px;
+}
 
-    header img {
-        min-width: 20px;
-    }
+header nav {
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+}
 
-    header nav {
-        border-bottom: 1px solid white;
-        margin-top: 10px;
-    }
-
-    header h1 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        text-align: center;
-        font-weight: 500;
-        font-size: 48px;
-    }
+header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-weight: 500;
+    font-size: 48px;
+}
 
 .login {
     width: 80px;
@@ -55,7 +37,9 @@ header {
     border-radius: 4px;
 }
 
-
+.login:hover{
+    background-color:#00acc1;
+}
 
 .title {
     color: #fff;
@@ -67,20 +51,17 @@ header {
     text-align: center;
 }
 
-.location {
-    display: flex;
-    justify-content: flex-start;
+
+.banner {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/banner3.jpg');
+    position: relative;
+    background-size: cover;
+    background-position: center;
 }
 
-    .location div {
-        display: flex;
-    }
-
-
-.plangap {
-    display: inline-flex;
+.container {
+    margin-top: 20px;
 }
-
 
 .view-photos {
     position: absolute;
@@ -96,66 +77,80 @@ header {
     background-color: white;
 }
 
-.costDuration{
- border:1px solid black;
-}
-
-
-
-.container h3 {
-    color: #e53b51;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-.container h4 {
-    color: #e53b51;
-    font-size: 25px;
-    margin-top: 3%;
-}
-
-
-.loc {
-    display: inline;
-}
-
-.map-logo {
-  height:25px;
-  width:22px;
-  
-}
-
-.size-duration{
-    width:100%;
-}
-
-    .map-logo img {
-        width: 15px;
-        height: 20px;
-        margin-top: 20px;
-    }
-
-
-
-
-.video{
-    height:auto;
-    width:100%;
-}
-
-
-iframe{
-    height:500px;
-    width:100%;
-}
-
-.map-location {
-    float: left;
+.location {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
+.khumasi {
+    font-size: 25px;
+    font-weight: bold;
+}
 
+.plangap {
+    display: inline-flex;
+}
+
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail div {
+    margin-right: 25px;
+}
+    
+.Icon {
+    height: 25px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.navigation{
+    border-top:1px solid #ccc;
+}
+
+.flex-item{
+    flex-grow:1;
+    text-align:center;
+}
+
+.flex-item:hover {
+    background-color: #e53b51;
+}
+
+.flex-item:hover a{
+    color:white;
+}
+
+.flex-item a{
+    color:#00acc1;
+}
+
+.flex-item a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.video {
+    height: auto;
+    width: 100%;
+}
+
+iframe {
+    height: 500px;
+    width: 100%;
+}
+
+.costDuration {
+    border: 1px solid black;
+}
+
+.costDuration h2{
+    font-size:25px;
+    margin-top:4px;
+}
 
 .border {
     border: 1px solid #ccc;
@@ -163,43 +158,27 @@ iframe{
 
 .verticle-line {
     border-left: 2px solid #ccc;
-    
 }
-
-
 
 .included h4 {
     background-color: #00acc1;
-    color: #fff;
-    margin-right:-14px;
-}
-
-.container p {
-    font-size: 14px;
-    color: #3d3d3d;
+    color: #fff !important;
+    margin-right: -14px;
 }
 
 .not-included h4 {
     background-color: #e53b51;
-    color: #fff;
+    color: #fff !important;
     margin-left: -14px;
 }
 
-.included img {
+.difference img {
     height: 16px;
     width: 16px;
 }
 
-.not-included img {
-    height: 16px;
-    width: 16px;
-}
-
-.not-included .verticle-line{
+.not-included .verticle-line {
     margin-left: -15px;
-}
-.difference {
-    text-align: center;
 }
 
 tr b {
@@ -210,38 +189,6 @@ table th {
     color: #fff;
     background-color: #00acc1;
 }
-
-.input-icons img {
-    position: absolute;
-}
-
-.input-icons {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.date-logo {
-    background-color: #fff;
-    padding: 8px;
-}
-
-.mapIcon {
-    height: 25px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-
-}
-.detail {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.detail div{
-
-        margin-right:25px;
-
-}
-
 
 
 .form {
@@ -254,10 +201,6 @@ table th {
 .btn {
     margin-top: 5%;
     width: 100%;
-}
-
-h6 {
-    font-size: 15px;
 }
 
 .form p {
@@ -274,30 +217,57 @@ span {
     color: #fff;
 }
 
-
-.container p {
-    color: #3d3d3d;
-    font-size: 14px;
+.date-logo {
+    background-color: #fff;
+    padding: 8px;
 }
-
-
 
 .page-footer {
     background-color: #3d3d3d;
     height: 100px;
 }
 
-    .page-footer img {
-        margin-top: 20px;
-    }
+.page-footer img {
+    margin-top: 20px;
+}
 
-    .page-footer a {
-        color: white;
-        float: right;
-        margin-right: 15px;
-        margin-top: 50px;
-    }
+.page-footer a {
+    color: white;
+    float: right;
+    margin-right: 15px;
+    margin-top: 50px;
+}
 
+.container h2 {
+    font-size: 36px;
+    font-weight:700;
+    color: #00acc1;
+    float: left;
+}
+
+.container h3 {
+    color: #e53b51;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.container h4 {
+    color: #e53b51;
+    font-size: 25px;
+    margin-top: 3%;
+}
+
+
+
+p {
+    font-size: 14px;
+    color: #3d3d3d;
+    text-align: justify;
+}
+
+h6 {
+    font-size: 15px;
+}
 
 /*contact us*/
 
@@ -321,14 +291,15 @@ span {
 
 .textarea ::-webkit-input-placeholder {
     text-align: center;
+   line-height:290px;
 }
 
 .sendButton {
-    width: 90px;
+    width: 100px;
     color: #fff;
     padding: 10px;
     background-color: #e53b51;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 
@@ -341,11 +312,14 @@ span {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/faq-banner.jpg');
 }
 
-
+.margin{
+    margin-left:-28px;
+}
 
 .accordion h5 {
     color: #00acc1;
     font-size: 32px;
+    font-weight:700;
 }
 
 .card-body p {
@@ -364,8 +338,6 @@ span {
 nav img {
     max-width: 100%;
 }
-/*Media Queries*/
-
 
 .accordion .arrow {
     margin-right: 0.5rem;
@@ -378,37 +350,6 @@ nav img {
 
 
 
-
-.navigation {
-   
- width: 100%;
-    
-    border-top: 1.2px solid #ccc;
-}
-
-.navigation div{
-    width: 20%;
-}
-    .navigation a {
-        color: #00acc1;
-       
-    }
-
-        .navigation a:hover {
-            background-color: #e53b51;
-            color: #fff;
-            text-decoration: none;
-        }
-
-    
-
-.cost > div {
-    position: relative;
-    border: 0.6px solid #ccc;
-    width: 100%;
-    height: 150px;
-}
-
 /* Responsive Contact us  Mobiles*/
 @media (min-width: 320px) and (max-width: 480px) {
     .banner-contactus {
@@ -418,6 +359,10 @@ nav img {
         background-position: center;
     }
 
+    .banner-contactus h1{
+        font-size:40px;
+        font-weight:700;
+    }
     .contact-p {
         margin-left: 15px;
         margin-right: 10px;
@@ -440,9 +385,7 @@ nav img {
         display: none;
     }
 
-    .contactus {
-        margin-bottom: 230px;
-    }
+    
 }
 /* Responsive contact us Tablets*/
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -463,22 +406,30 @@ nav img {
         width: 30px;
     }
 
-    .card-header h5 {
-        font-size: 15px;
-        margin-left: 0px;
+    .banner-faq h1 {
+        font-size: 40px;
+        font-weight: 700;
     }
 
+    .card-header h5 {
+        font-size: 13px;
+    }
+
+    .accordion .card .card-header {
+        padding: 0px;
+    }    
+    .margin{
+        margin-left:-23px;
+    }
+    
     .card-header a {
         margin-left: 0px;
     }
 
     .card-body p {
-        font-size: 12px;
+        font-size: 10px;
     }
 
-    .faq {
-        margin-bottom: 100px;
-    }
 }
 /*Responsive faq tablets*/
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -535,25 +486,27 @@ nav img {
     .container h2 {
         font-size: 22px;
     }
+
     .container h4 {
-        font-size:18px;
+        font-size: 18px;
     }
-    .container p{
-        font-size:12px;
+
+    .container p {
+        font-size: 12px;
     }
 
     .place-location {
         margin-left: 2%;
     }
 
-        .map-logo {
-            height: 20px;
-            width: 15px;
-        }
+    .map-logo {
+        height: 20px;
+        width: 15px;
+    }
 
-        .container h3 {
-            font-size: 15px;
-        }
+    .container h3 {
+        font-size: 15px;
+    }
 
     .plangap img {
         height: 70px;
@@ -563,35 +516,66 @@ nav img {
         font-size: 15px;
     }
 
- 
+    .costDuration{
+        border:none;
+    }
 
-    .navigation a{
-        font-size:10px;
+    .costDuration img {
+        height: 20px;
+        width: 20px;
+        margin:auto;
     }
-    .navigation{
-        margin-bottom:10px;
-    }
-    
-    .costDuration img{
-          height:20px;
-          width:20px;
 
+    .costDuration h2 {
+        font-size: 18px;
+        margin:auto;
+    }
 
+    .costDuration h3{
+        font-size:30px;
+        margin:auto;
     }
-    .costDuration .duration  h2{
-        font-size:15px;
-    }
-    .costDuration div{
+
+    .costDuration div {
         display: grid !important;
+        justify-content:center;
     }
 
- 
-   .detail div img{
-        display:block;
+   .verticle-line{
+       border:none;
+   }
+
+   .not-included{
+       margin-left:15px;
+   }
+
+   .included{
+       margin-right:14px;
+   }
+   
+
+    .detail div img {
+        display: block;
     }
+
     .detail div {
         margin-right: 10px;
-        max-width:50%;
+        max-width: 50%;
+        
     }
 
+    .khumasi {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .menu span{
+        background-color:transparent;
+    }
+   
+    .flex-item a{
+        font-size:10px;
+    }
+    .dropkick{
+        margin:10px 0px;
+    }
 }
