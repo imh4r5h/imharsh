@@ -1,0 +1,224 @@
+* {
+    font-family: roboto;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    height: 550px;
+}
+
+    header img {
+        min-width: 20px;
+    }
+
+    header nav {
+        border-bottom: 1px solid white;
+        margin-top: 10px;
+    }
+
+    header h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-weight: 700;
+        font-size: 48px;
+    }
+
+    header h2 {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color:#00acc1;
+        font-size: 33px;
+    }
+
+.login {
+    width: 80px;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.title {
+    color: #fff;
+    font-size: 48px;
+    position: relative;
+    font-weight: bolder;
+    top: 200px;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.banner {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/banner-img.jpg');
+    position: relative;
+   background-repeat:no-repeat;
+   background-size:cover;
+    background-position: center;
+}
+
+.index h1{
+    font-size:36px;
+    color:#00acc1;
+    font-weight:bold;
+}
+
+.index{
+    margin-left:25px;
+}
+
+#owl-demo .item {
+    margin: 3px;
+}
+
+    #owl-demo .item img {
+        
+    
+    }
+.set {
+    width: 450px;
+    height: 350px;
+}
+
+.set2{
+    width:300px;
+    height:250px;
+}
+
+.set3{
+    width:360px;
+    height:390px;
+}
+.text{
+    position:absolute;
+    bottom:0;
+    left:15px;
+}
+
+.text2{
+    position:absolute;
+    bottom:0;
+    left:15px;
+}
+
+
+.text3 {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+
+.text .name{
+    font-size:13.5px;
+    background-color:white;
+    color:#e53b51;
+    display:inline;
+    border-radius:3px;
+    padding:3px;
+}
+
+.text .purpose{
+    font-size:21px;
+    color:white;
+}
+
+.text .organization{
+    font-size:15px;
+    color:#00acc1;
+
+}
+
+.text .people{
+    color:white;
+    font-size:13.5px;
+}
+.text2 .projects {
+    font-size: 15px;
+    color: #e53b51;
+}
+
+.text2 .place {
+    font-size: 21px;
+    color: white;
+}
+
+.text3 .starting{
+    font-size:15px;
+    color:white;
+}
+
+.text3 .cost{
+    background-color:white;
+    display:inline;
+    color:#e53b51;
+    font-size:27px;
+    border-radius:4px;
+    padding:4px;
+    font-weight:bold;
+}
+
+.text3 .duration{
+    margin-top:3px;
+    font-size:15px;
+    color:white;
+}
+
+.text3 .organization{
+    font-size:18px;
+    color:white;
+
+}
+
+.text-danger{
+    color:#e53b51 !important;
+    font-size:13.5px;
+}
+.text-primary{
+    color:#00acc1 !important;
+font-size:15px;
+}
+
+.image {
+    position:relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(images/thumb01.jpg);  
+}
+
+
+.rotator {
+    transform:rotate(270deg);
+}
+
+.owl-nav{
+    position:absolute;
+    left:-115%;
+   top:150px;
+}
+
+button{
+    opacity:0.7;
+}
+
+.page-footer {
+    background-color: #3d3d3d;
+    height: 100px;
+}
+
+    .page-footer img {
+        margin-top: 20px;
+    }
+
+    .page-footer a {
+        color: white;
+        float: right;
+        margin-right: 15px;
+        margin-top: 50px;
+    }
