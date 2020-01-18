@@ -19,7 +19,8 @@
             $("#owl-demo").owlCarousel({
 
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
-
+                nav:true,
+                navText:['<img class="left" src="images/left-white-arrow.png"/>', '<img class="right" src="images/right-white-arrow.png"/>'],
                 items: 4,
                 itemsDesktop: [1199, 1],
                 itemsDesktopSmall: [979, 1]
@@ -182,7 +183,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </div>
 
         <!-- NEw NEw NEW -->
@@ -282,7 +283,7 @@
         <div id="owl-demo3" class="owl-carousel">
 
             <div class="item">
-                <div class="image set3">
+                <div class="image1 set3">
                     <div class="text3">
                         <p class="starting">Starting at</p>
                         <p class="cost">$299/week</p>
@@ -298,7 +299,7 @@
             </div>
 
             <div class="item">
-                <div class="image set3">
+                <div class="image1 set3">
                     <div class="text3">
                         <p class="starting">Starting at</p>
                         <p class="cost">$299/week</p>
@@ -312,22 +313,7 @@
 
 
             <div class="item">
-                <div class="image set3">
-                    <div class="text3">
-                        <p class="starting">Starting at</p>
-                        <p class="cost">$299/week</p>
-                        <p class="duration">for 4 weeks</p>
-                        <p class="organization">Surf School for children</p>
-
-                    </div>
-                </div>
-                <p class="text-danger">South Africa</p>
-                <p class="text-primary">Global Volunteering International</p>
-            </div>
-
-
-            <div class="item">
-                <div class="image set3">
+                <div class="image1 set3">
                     <div class="text3">
                         <p class="starting">Starting at</p>
                         <p class="cost">$299/week</p>
@@ -342,7 +328,22 @@
 
 
             <div class="item">
-                <div class="image set3">
+                <div class="image1 set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+
+            <div class="item">
+                <div class="image1 set3">
                     <div class="text3">
                         < <p class="starting">Starting at</p>
                         <p class="cost">$299/week</p>
@@ -357,7 +358,7 @@
 
 
             <div class="item">
-                <div class="image set3">
+                <div class="image1 set3">
                     <div class="text3">
                         <p class="starting">Starting at</p>
                         <p class="cost">$299/week</p>
@@ -372,7 +373,7 @@
 
 
             <div class="item">
-                <div class="image set3">
+                <div class="image1 set3">
                     <div class="text3">
                         <p class="starting">Starting at</p>
                         <p class="cost">$299/week</p>
@@ -387,7 +388,7 @@
 
 
             <div class="item">
-                <div class="image set3">
+                <div class="image1 set3">
                     <div class="text3">
                         <p class="starting">Starting at</p>
                         <p class="cost">$299/week</p>
