@@ -24,7 +24,7 @@ header h1 {
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 48px;
 }
 
@@ -66,7 +66,7 @@ header h1 {
 .view-photos {
     position: absolute;
     bottom: 15px;
-    left: 15px;
+    left: 25px;
     color: #00acc1;
     font-size: 17px;
     height: 50px;
@@ -92,6 +92,9 @@ header h1 {
     display: inline-flex;
 }
 
+.plangap img{
+    border:1px solid #ccc;
+}
 .detail {
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +113,7 @@ header h1 {
 .navigation{
     border-top:1px solid #ccc;
 }
+
 
 .flex-item{
     flex-grow:1;
@@ -191,6 +195,21 @@ table th {
     background-color: #00acc1;
 }
 
+.center {
+    height: 160px;
+    border: 1px solid black;
+    margin: 1px;
+    overflow: hidden;
+    /*will change this to hidden later to deny scolling to user*/
+    white-space: nowrap;
+}
+
+.right-button {
+    position: absolute;
+    left: 90%;
+    line-height: 45px;
+    background-color: transparent;
+}
 
 .form {
     background-color: #00acc1;
@@ -204,6 +223,14 @@ table th {
     width: 100%;
 }
 
+.card{
+    border-left:none !important;
+    border-right:none !important;
+}
+.card-header{
+    background-color:white !important;
+  padding:14px !important;
+}
 .form p {
     margin-top: 10px;
 }
@@ -313,9 +340,6 @@ h6 {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/faq-banner.jpg');
 }
 
-.margin{
-    margin-left:-28px;
-}
 
 .accordion h5 {
     color: #00acc1;
@@ -361,7 +385,7 @@ nav img {
     }
 
     .banner-contactus h1{
-        font-size:40px;
+        font-size:32px;
         font-weight:700;
     }
     .contact-p {
@@ -474,8 +498,9 @@ nav img {
     }
 
     .view-photos {
-        margin-left: 50%;
+        margin-left: 48%;
         width: 40%;
+        height:40px;
         font-size: 80%;
     }
 
@@ -519,23 +544,27 @@ nav img {
 
     .costDuration{
         border:none;
+      
     }
 
     .costDuration img {
         height: 20px;
         width: 20px;
-        margin:auto;
+        margin-left:40%;
+       
     }
 
     .costDuration h2 {
         font-size: 18px;
         margin:auto;
+     
     }
 
     .costDuration h3{
         font-size:30px;
         margin:auto;
     }
+    
 
     .costDuration div {
         display: grid !important;
@@ -582,4 +611,16 @@ nav img {
     .dropkick{
         margin:10px 0px;
     }
+    .right-button {
+        position: absolute;
+        left: 84%;
+        line-height: 45px;
+        background-color: transparent;
+    }
 }
+
+
+
+
+
+
