@@ -74,6 +74,7 @@ header {
 
 .index{
     margin-left:25px;
+    margin-right:25px;
 }
 
 #owl-demo .item {
@@ -188,20 +189,20 @@ font-size:15px;
 }
 
 .image {
-    position:relative;
+   
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(images/thumb01.jpg);  
 }
 
+.image1 {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(images/thumb01.jpg);
+}
 
 .rotator {
     transform:rotate(270deg);
 }
 
-.owl-nav{
-    position:absolute;
-    left:-115%;
-   top:150px;
-}
+
 
 button{
     opacity:0.7;
@@ -222,3 +223,16 @@ button{
         margin-right: 15px;
         margin-top: 50px;
     }
+
+.left{
+    position:absolute;
+    right:99.2%;
+    top:42%;
+   
+}
+.right{
+position:absolute;
+top:42%;
+left:99%;
+
+}
