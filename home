@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="owl.theme.default.min.css" rel="stylesheet" />
+    <link href="owl.carousel.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#owl-demo").owlCarousel({
+
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                items: 4,
+                itemsDesktop: [1199, 1],
+                itemsDesktopSmall: [979, 1]
+
+            });
+
+        });
+
+        $(document).ready(function () {
+
+            $("#owl-demo2").owlCarousel({
+
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                items: 6,
+                itemsDesktop: [1199, 1],
+                itemsDesktopSmall: [979, 1]
+
+            });
+
+        });
+
+        $(document).ready(function () {
+
+            $("#owl-demo3").owlCarousel({
+
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                items: 5,
+                itemsDesktop: [1199, 1],
+                itemsDesktopSmall: [979, 1]
+
+            });
+
+        });
+    </script>
+
+    <title>index</title>
+</head>
+<body>
+    <!-- Starting of banner/header part -->
+
+    <div class="container-fluid banner">
+        <header>
+            <nav class="navbar navbar-expand-md fixed-top">
+                <img src="images/logo_1.png" alt="Alternate Text" class="logo" />
+                <button class="navbar-toggler border-white menu" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><img src="images/menu.svg" /></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-5 mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="#">HOW IT WORKS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="#">CONTACT US</a>
+                        </li>
+
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+
+                        <button class="btn btn-outline-primary my-2 my-sm-0 text-white border-white" type="submit">Login</button>
+                    </form>
+                </div>
+            </nav>
+
+            <h1 class="text-white">Discover Yourself,Discover the World</h1>
+
+            <h2 class="">Apply to your perfect volunteer,intern or teach abroad program</h2>
+
+
+
+        </header>
+
+    </div>
+    <div class="index">
+        <h1 class="mt-5">Trending Projects</h1>
+        <div id="owl-demo" class="owl-carousel">
+
+            <div class="item">
+                <div class="image set">
+                    <div class="text">
+                        <p class="name">Costa Rica</p>
+                        <p class="purpose">MEDICAL SUPPORT IN QAPOS</p>
+                        <p class="organization">Global Volunteering International</p>
+                        <p class="people">12 people researching this project</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item">
+                    <div class="image set">
+                        <div class="text">
+                            <p class="name">Costa Rica</p>
+                            <p class="purpose">MEDICAL SUPPORT IN QAPOS</p>
+                            <p class="organization">Global Volunteering International</p>
+                            <p class="people">12 people researching this project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item">
+                    <div class="image set">
+                        <div class="text">
+                            <p class="name">Costa Rica</p>
+                            <p class="purpose">MEDICAL SUPPORT IN QAPOS</p>
+                            <p class="organization">Global Volunteering International</p>
+                            <p class="people">12 people researching this project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item">
+                    <div class="image set">
+                        <div class="text">
+                            <p class="name">Costa Rica</p>
+                            <p class="purpose">MEDICAL SUPPORT IN QAPOS</p>
+                            <p class="organization">Global Volunteering International</p>
+                            <p class="people">12 people researching this project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item">
+                    <div class="image set">
+                        <div class="text">
+                            <p class="name">Costa Rica</p>
+                            <p class="purpose">MEDICAL SUPPORT IN QAPOS</p>
+                            <p class="organization">Global Volunteering International</p>
+                            <p class="people">12 people researching this project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item">
+                    <div class="image set">
+                        <div class="text">
+                            <p class="name">Costa Rica</p>
+                            <p class="purpose">MEDICAL SUPPORT IN QAPOS</p>
+                            <p class="organization">Global Volunteering International</p>
+                            <p class="people">12 people researching this project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item">
+                    <div class="image set">
+                        <div class="text">
+                            <p class="name">Costa Rica</p>
+                            <p class="purpose">MEDICAL SUPPORT IN QAPOS</p>
+                            <p class="organization">Global Volunteering International</p>
+                            <p class="people">12 people researching this project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NEw NEw NEW -->
+        <h1 class="mt-5">Feature Destinations</h1>
+        <div id="owl-demo2" class="owl-carousel">
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">KENYA</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">INDIA</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">AFRICA</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">SOUTH AFRICA</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">BOLIVIA</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">QAPOS</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">NEW ZELAND</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="image set2">
+                    <div class="text2">
+                        <p class="projects">Costa Rica</p>
+                        <p class="place">QAPOS</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- NEW NEW NEW NEW NEW NEW  -->
+
+        <div id="owl-demo3" class="owl-carousel">
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+
+                    </div>
+                </div>
+               
+                    <p class="text-danger">South Africa</p>
+                    <p class="text-primary">Global Volunteering International</p>
+                
+            </div>
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        < <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+
+            <div class="item">
+                <div class="image set3">
+                    <div class="text3">
+                        <p class="starting">Starting at</p>
+                        <p class="cost">$299/week</p>
+                        <p class="duration">for 4 weeks</p>
+                        <p class="organization">Surf School for children</p>
+                    </div>
+                </div>
+                <p class="text-danger">South Africa</p>
+                <p class="text-primary">Global Volunteering International</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
