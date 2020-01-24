@@ -1,0 +1,564 @@
+
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.banner {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/banner-img.jpg');
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    height: 630px;
+}
+
+nav a {
+    font-size: 16px;
+}
+
+
+
+.login {
+    font-size: 14px;
+}
+
+header h1 {
+    position: absolute;
+    top: 50%;
+    color: white;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+header p {
+    position: absolute;
+    color: #00acc1;
+    font-size: 33px;
+    top: 60%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    margin-top: 15px;
+}
+
+
+/* form-section */
+.form-section {
+    position: relative;
+    top: 80%;
+    left: 56%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    height: 20%;
+}
+
+.inline {
+    width: 25%;
+}
+
+.transparent-input {
+    height: 50px;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid white !important;
+}
+
+::placeholder {
+    color: white !important;
+    text-align:center;
+}
+
+
+
+.submit {
+    position: relative;
+    width: 100px;
+    height: 50px;
+}
+
+    .submit button {
+        width: 100%;
+        height: 50px;
+        background-color: #e53b51;
+        color: white;
+    }
+
+.suggestion {
+    width: 90%;
+    color: white;
+    font-size: 15px;
+}
+
+.mobile-span {
+    display: none;
+    height: 50px;
+    margin-top: 8px;
+}
+
+    .mobile-span span {
+        color: #e53b51;
+        background-color: white;
+    }
+/* Trending Projects */
+
+/* ---------------------------------------------- */
+
+.owl-carousel .nav-btn2 {
+    position: absolute;
+    cursor: pointer;
+    top: 100px !important;
+}
+
+.owl-carousel .owl-prev.disabled,
+.owl-carousel .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.owl-carousel .nav-btn1 {
+    height: 45px;
+    position: absolute;
+    width: 45px;
+    cursor: pointer;
+}
+
+.owl-carousel .prev-slide {
+    background: url(images/left-arrow.svg) no-repeat scroll 0 0;
+    left: 0;
+    top: 50%;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    transform: translateY(-100%);
+    z-index: 1000;
+}
+
+.owl-carousel .next-slide {
+    background: url(images/right-arrow.svg) no-repeat scroll 0 0;
+    right: 0%;
+    top: 50% !important;
+    width: 45px;
+    height: 49px;
+    background-color:white;
+    border-radius:50%;
+    opacity:0.7;
+    transform: translateY(-100%);
+}
+/* --------------------------------------------------- */
+.main-header {
+    font-size: 36px;
+    color: #00acc1;
+    font-weight: bold;
+}
+.content-box { /* now a container for the image */
+    overflow: hidden; /* hide the excess */
+    position:relative;
+}
+   
+.trending .item {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/thumb02.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 365px;
+    transition: .3s ease-in-out;
+}
+
+
+.item:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.feature .item:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.country {
+    position: absolute;
+    padding:3px;
+    border-radius:3px;
+    top: 71%;
+    background-color: white;
+    left: 3%;
+    font-size: 13.5px;
+    color: #e53b51;
+}
+
+.project-header {
+    position: absolute;
+    top: 78%;
+    left: 3%;
+    font-size: 21px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.sub-header {
+    position: absolute;
+    top: 85%;
+    left: 3%;
+    font-size: 15px;
+    color: #00acc1;
+}
+
+.person {
+    position: absolute;
+    top: 93%;
+    left: 3%;
+    font-size: 13.5px;
+    color: white;
+}
+
+/* feature */
+.feature .item {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/thumb09.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 230px;
+    transition: .3s ease-in-out;
+}
+
+
+
+.how-many {
+    position: absolute;
+    top: 77%;
+    left: 4%;
+    font-size: 15px;
+    color: #e53b51;
+}
+
+.feature-country {
+    position: absolute;
+    top: 87%;
+    left: 4%;
+    font-size: 21px;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+
+
+/* Most Affordable project */
+
+.most-affordable .item {
+    position: relative;
+    height: 500px;
+}
+
+    .most-affordable  .item .main-body {
+        position: relative;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/thumb18.jpg');
+        background-position: center;
+        background-size: cover;
+        height: 400px;
+        transition: .3s ease-in-out;
+    }
+
+.start {
+    position: absolute;
+    top: 67%;
+    left: 4%;
+    font-size: 15px;
+    color: white;
+}
+
+.price {
+    position: absolute;
+    top: 74%;
+    left: 4%;
+    background-color: white;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 8px;
+    font-size: 27px;
+    color: #e53b51;
+}
+
+.duration {
+    position: absolute;
+    top: 87%;
+    left: 4%;
+    font-size: 15px;
+    color: white;
+}
+
+.project-name {
+    position: absolute;
+    top: 93%;
+    left: 4%;
+    font-size: 18px;
+    color: white;
+}
+
+.most-affordable .item .country {
+    position: absolute;
+    top: 85%;
+    left: 4%;
+    font-size: 13.5px;
+    color: #e53b51;
+}
+
+.most-affordable .item .sub-header {
+    position: absolute;
+    top: 89%;
+    left: 4%;
+    font-size: 15px;
+    color: #00acc1;
+}
+
+
+/* footer */
+.page-footer {
+    background-color: #3d3d3d;
+    height: 100px;
+}
+
+    .page-footer img {
+        margin-top: 20px;
+    }
+
+    .page-footer a {
+        color: white;
+        float: right;
+        margin-right: 15px;
+        margin-top: 50px;
+    }
+
+
+/*..........Search page CSS starts from here...................*/
+.search-nav{
+    background-color:white;
+    box-shadow:0px 1px rgba(0,0,0,0.1);
+}
+
+.search-nav a{
+    color:#00acc1 !important;
+    font-size:16px !important;
+}
+
+.search-nav .login{
+    background-color:white!important;
+    border:2px solid #00acc1 !important;
+    color:#00acc1!important;
+}
+
+.search{
+    margin-top:30px;
+    margin-left:60px;
+    margin-right:60px;
+}
+
+/*...........Media queries.......*/
+@media screen and (min-width:320px) and (max-width: 767px) {
+    .logo {
+        width: 50%;
+        height: 50%;
+    }
+
+    .main-header {
+        font-size: 25px !important;
+    }
+
+    .item .project-header{
+        font-size:16px;
+    }
+
+    header {
+        height: 500px !important;
+    }
+
+    .content {
+        flex-direction: column !important;
+        margin-top: 2%;
+        text-align:center;
+    }
+
+    .inline {
+        width: 100% !important;
+    }
+
+    .content-center{
+        justify-content:center;
+    }
+    .transparent-input {
+        background-color: white !important;
+        margin-top: auto!important;
+    }
+
+    .submit {
+        margin-top: 3% !important;
+        width: 100% !important;
+    }
+
+    .content .item .submit {
+        margin-top: 10%;
+    }
+
+    .form-section {
+        width: 80% !important;
+        top: 50% !important;
+        left: 50% !important;
+    }
+
+    .mobile-span {
+        display: flex !important;
+        color: #e53b51;
+        z-index: 10;
+        width: 75px !important;
+        background-color: white;
+    }
+
+        .mobile-span span {
+            height: 100%;
+        }
+
+    .dk-selected {
+        color: black;
+    }
+
+    ::-webkit-input-placeholder {
+        color: black !important;
+    }
+
+    .suggestion {
+        display: none !important;
+    }
+
+    header h1 {
+        font-size: 25px !important;
+        top: 18% !important;
+        width: 250px;
+    }
+
+    header p {
+        font-size: 18px !important;
+        top: 30% !important;
+        width: 300px;
+        color: #00acc1;
+    }
+
+    footer a {
+        font-size: 12px;
+    }
+
+    .input-group-text {
+        border: none !important;
+        outline: none !important;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 35px !important;
+        width: 700px;
+    }
+
+    header p {
+        font-size: 22px !important;
+        width: 700px;
+    }
+
+
+    .form-section {
+        width: 88% !important;
+    }
+    /* .suggestion{
+   } */
+}
+
+
+/*..........Search page CSS starts from here...................*/
+.search-nav {
+    background-color: white;
+    box-shadow: 0px 1px rgba(0,0,0,0.1);
+}
+
+    .search-nav a {
+        color: #00acc1 !important;
+        font-size: 16px !important;
+    }
+
+    .search-nav .login {
+        background-color: white !important;
+        border: 2px solid #00acc1 !important;
+        color: #00acc1 !important;
+    }
+
+.search {
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
+
+.checkbox label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+    .checkbox .cr .cr-icon {
+        position: absolute;
+        font-size: .8em;
+        line-height: 0;
+        top: 50%;
+        left: 15%;
+    }
+
+.checkbox label input[type="checkbox"] {
+    display: none;
+}
+
+    .checkbox label input[type="checkbox"] + .cr > .cr-icon {
+        opacity: 0;
+    }
+.dropkick-custom .dk-selected{
+    color:black;
+    background-color:white;
+    border:1px solid black;
+    padding:6px 0px 6px 0px;
+}
+
+
+
+
+
+
+.search-carousel .item {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%), url('images/thumb02.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 365px;
+    transition: .3s ease-in-out;
+}
+
+.inline input{
+    color:white;
+}
