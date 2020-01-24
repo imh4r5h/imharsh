@@ -1,0 +1,506 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+/* navigation bar */
+nav a {
+    font-size: 16px;
+    color: #00acc1;
+}
+
+.login {
+    font-size: 14px;
+    color: #00acc1;
+    border: 1px solid #00acc1;
+}
+
+/* filter */
+.mobile-view {
+    display: none;
+}
+
+    .mobile-view h1 {
+        display: none;
+    }
+/* checkbox */
+
+
+.container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.check-box {
+    width: 350px;
+}
+
+    .check-box h2 {
+        color: #00acc1;
+        font-size: 14px;
+    }
+
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #e53b51;
+    background-color: #e53b51;
+}
+
+.custom-checkbox {
+    margin-left: 25%;
+}
+
+.country {
+    width: 25%;
+}
+
+.activity {
+    width: 25%;
+}
+
+.country h2 {
+    font-size: 14px;
+    color: #00acc1;
+}
+/* activity */
+
+.activity h2 {
+    color: #00acc1;
+    font-size: 14px;
+}
+
+.dk-selected {
+    color: #808080;
+    margin-top: 0%;
+}
+/* more-filter */
+
+
+.more-filter a {
+    color: #00acc1;
+    width: 80%;
+    border: 1px solid #00acc1;
+}
+
+.more-filter button {
+    background-color: transparent;
+    font-size: 15px;
+    color: #00acc1;
+    border-color: #00acc1;
+}
+
+    .more-filter button:hover {
+        background-color: transparent;
+        color: #00acc1;
+    }
+
+    .more-filter button:active {
+        background-color: transparent;
+        color: #00acc1;
+    }
+
+
+
+sup {
+    top: -16px;
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+.button-icon {
+    display: none;
+    border: 1px solid #00acc1;
+    width: 38px;
+    height: 38px;
+    margin-right: 5px;
+}
+
+
+
+/* modal */
+.modal-dialog {
+    top: 30%;
+}
+
+.modal-content {
+    width: 160%;
+    right: 30%;
+}
+
+.section {
+    position: relative;
+    width: 30%;
+    margin-left: 1%;
+}
+
+.start {
+    font-size: 14px;
+    color: #00acc1;
+}
+
+.reset {
+    float: right;
+    color: #e53b51;
+    font-size: 14px;
+}
+
+.row {
+    width: 99%;
+}
+
+.date-section::after {
+    position: absolute;
+    content: "-";
+    right: 1%;
+    margin-top: -20%;
+}
+
+.month, .year {
+    width: 35%;
+}
+
+.date {
+    width: 20%;
+}
+
+/* duration */
+
+.section-duration .weeks {
+    font-size: 15px;
+    color: #808080;
+}
+
+.section-duration .row form {
+    width: 100%;
+}
+
+/*Result */
+.result {
+    position: relative;
+}
+
+    .result h2 {
+        float: left;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .result h3 {
+        /* float: right; */
+        font-size: 14px;
+    }
+
+    .result .volunteer {
+        width: 130px;
+    }
+
+
+/*  carousel  */
+.owl-carousel {
+    width: 100%;
+    height: 315px;
+}
+
+    .owl-carousel .item .main-body {
+        position: relative;
+        background-image: url("images/photo01.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 225px;
+    }
+
+.sub-body {
+    position: relative;
+    height: 90px;
+}
+
+.project-name {
+    position: absolute;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: white;
+    color: #e53b51;
+    top: 5%;
+    padding: 3px;
+    border-radius: 3px;
+    opacity: 0.7;
+    left: 3%;
+}
+
+.header {
+    position: absolute;
+    top: 10%;
+    font-size: 16px;
+}
+
+.icon-body {
+    position: absolute;
+    top: 36%;
+    font-size: 14px;
+    color: #00acc1;
+}
+
+.icon {
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 15px !important;
+}
+
+.duration {
+    position: absolute;
+    top: 72%;
+    font-size: 13px;
+    color: #808080;
+}
+
+    .duration span {
+        color: #e53b51;
+    }
+
+
+
+/* carousel-button */
+.owl-carousel .nav-btn2 {
+    position: absolute;
+    cursor: pointer;
+    top: 100px !important;
+}
+
+.owl-carousel .owl-prev.disabled,
+.owl-carousel .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+
+.owl-carousel .next-slide {
+    background: url(images/right-white-arrow.png) no-repeat scroll 0 0;
+    left: 93%;
+    top: 50%;
+    width: 45px;
+    height: 49px;
+}
+
+
+/* footer */
+.page-footer {
+    background-color: #3d3d3d;
+    height: 100px;
+}
+
+    .page-footer img {
+        margin-top: 20px;
+    }
+
+    .page-footer a {
+        color: white;
+        float: right;
+        margin-right: 15px;
+        margin-top: 50px;
+    }
+
+.search {
+    margin-left: 40px;
+}
+
+.carousel-content .row {
+    margin-bottom: 30px;
+}
+
+.view {
+    display: flex;
+}
+
+.my-parent-class .owl-carousel .owl-item {
+    -webkit-animation-duration: 3s !important;
+    animation-duration: 3s !important;
+}
+
+.carousel-content .container {
+    margin-left: 400px;
+}
+
+@media screen and (min-width:320px) and (max-width: 767px) {
+    .logo {
+        width: 50%;
+        height: 40%;
+    }
+
+    .view {
+        display: grid !important;
+    }
+
+    .carousel-content .container {
+        margin-left: 17px !important;
+    }
+
+    body .search {
+        margin-left: 0px;
+    }
+
+    .menu {
+        background-color: #e53b51;
+    }
+
+    .result h2 {
+        font-size: 15px !important;
+    }
+
+    .result h3 {
+        font-size: 15px !important;
+    }
+
+    .form-control {
+        height: 30px !important;
+    }
+
+    .modal-body .form-control {
+        font-size: 11px !important;
+    }
+
+    .mobile-view {
+        display: flex !important;
+    }
+
+        .mobile-view h1 {
+            display: inline !important;
+        }
+
+    .check-box, .country, .activity {
+        display: none !important;
+    }
+
+    .mobile-view h1 {
+        font-size: 12px !important;
+        width: 170px;
+        color: #00acc1 !important;
+    }
+
+    .search {
+        margin-left: 10px !important;
+    }
+
+    .mobile-view h1 span {
+        color: #808080 !important;
+    }
+
+    .button-icon {
+        display: flex !important;
+        margin-left: auto;
+    }
+
+    .vertical-line {
+        border-right: 1px solid #808080;
+        margin-right: 1%;
+    }
+
+    footer a {
+        font-size: 12px;
+    }
+
+    .modal-dialog {
+        top: 15% !important;
+    }
+
+    .modal-content {
+        width: 100% !important;
+        right: 0% !important;
+        height: 450px;
+    }
+
+    .section {
+        width: 100% !important;
+        margin: auto !important;
+    }
+
+    .more-filter {
+        margin-left: 0px !important;
+    }
+
+
+        .more-filter button {
+            font-size: 10px !important;
+            margin-bottom: 10px;
+            height: 40px;
+        }
+
+    .badge {
+        position: absolute;
+        top: -20px !important;
+        left: 33%;
+        background-color: #00acc1;
+        color: white;
+        padding: 3px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1023px) {
+
+    .carousel-content .container {
+        margin-left: 45px !important;
+    }
+
+    .dk-selected {
+        color: #808080;
+        margin-top: 0% !important;
+    }
+
+    .intern {
+        margin-left: 18% !important;
+    }
+
+    .modal-dialog {
+        top: 15% !important;
+    }
+
+    .modal-content {
+        width: 75% !important;
+        height: 600px !important;
+        right: -50% !important;
+    }
+
+    .check-box {
+        width: 200px !important;
+    }
+
+    .country {
+        width: 30% !important;
+    }
+
+    .activity {
+        width: 30% !important;
+    }
+
+    .more-filter button {
+        margin-bottom: 10px !important;
+    }
+
+    .section {
+        width: 110% !important;
+        margin: auto !important;
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width: 1025px) {
+    .more-filter button {
+        font-size: 14px !important;
+    }
+    .modal-dialog {
+        top: 15% !important;
+    }
+
+
+
+    .modal-content {
+        width: 125% !important;
+        height: 500px !important;
+        right: 100px !important;
+    }
+    .carousel-content .container {
+        margin-left: 45px !important;
+    }
+}
