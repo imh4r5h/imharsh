@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- js -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="dropkick.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="searchscript.js"></script>
+    <!-- css -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="owl.carousel.min.css">
+    <link rel="stylesheet" href="dropkick.css">
+    <link rel="stylesheet" href="searchstyle.css">
+    <!-- link -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Search</title>
+
+    <script>
+
+        // dropkick
+        $(function () {
+
+            $('#activity').dropkick({
+            });
+
+            $('#relevancy').dropkick({
+            });
+
+
+        });
+        $(document).ready(function () {
+            if ($(window).width() >= 768 && $(window).width() <= 1023) {
+                $("#filter").html("...");
+
+            }
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid banner">
+        <nav class="navbar navbar-expand-md  border-bottom sticky-top">
+            <img src="images/logo.png" alt="Alternate Text" class="logo" />
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="images/menu.svg" class="menu" alt="">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-5 mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link font-weight-bold" href="#">HOW IT WORKS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  font-weight-bold" href="#">CONTACT US</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 mr-3">
+                    <button class="login btn my-2 my-sm-0 " type="submit">Login</button>
+                </form>
+            </div>
+
+        </nav>
+
+    </div>
+    <div class="container ">
+        <!-- Filter -->
+        <div class="d-flex justify-content-start mt-4  modal-data">
+            <div class="mobile-view d-flex">
+                <h1>
+                    Volunteer <span>in  </span>Cambodia <span>for</span>
+                    Animal Conservation
+                </h1>
+            </div>
+            <div class="button-icon">
+                <button class="btn btn-block" ><img src="images/edit-icon.png" alt=""></button>
+            </div>
+            <div class="vertical-line">
+            </div>
+
+            <div class="check-box " id="checkbox">
+                <h2>Cause</h2>
+                <div class="content d-flex flex-lg-row flex-md-row">
+                    <div class="d-flex flex-lg-row flex-md-column">
+                        <div class="custom-checkbox mr-2">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">volunteer</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                            <label class="custom-control-label" for="customCheck2">Tech</label>
+                        </div>
+                    </div>
+                    <div class=" custom-control custom-checkbox intern">
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <label class="custom-control-label" for="customCheck3">Intern</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="country mr-3">
+                <h2>Country</h2>
+                <input type="text" class="form-control" placeholder="Search Country">
+            </div>
+            <div class="activity mr-auto ml-auto">
+                <h2>Activity</h2>
+                <select name="theme" id="activity" class="item form-control transparent-input my-auto" tabindex="9">
+                    <option value="">Animal conversation</option>
+                    <option value="default">Default Theme</option>
+                    <option value="black">Dark Gloss</option>
+                    <option value="orange">Light Gloss</option>
+                </select>
+
+            </div>
+            <div class="more-filter mt-auto ml-auto">
+                <button type="button" class="btn" data-toggle="modal" data-target="#filtermodal" id="filter">
+                    More Filters
+                </button>
+            </div>
+
+        </div>
+        <div class="modal fade" id="filtermodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container-fluid view justify-content-lg-between flex-lg-row flex-md-column">
+                            <!-- <div class="d-flex justify-content-lg-between flex-lg-row flex-md-column"> -->
+                            <div class="section date-section mr-5">
+                                <div class="row d-flex justify-content-between">
+                                    <h2 class="start">Start date(range)</h2>
+                                    <h2 class="reset">Reset</h2>
+                                </div>
+                                <div class="row startdate d-flex justify-content-between">
+                                    <div class="month">
+                                        <select name="theme" id="start-month" class=" form-control  my-auto">
+                                            <option value="">Month</option>
+                                            <option value="default">Jan</option>
+                                            <option value="black">Feb</option>
+                                            <option value="orange">Mar</option>
+                                        </select>
+                                    </div>
+                                    <div class="date">
+                                        <select name="theme" id="start-month" class=" form-control  my-auto">
+                                            <option value="">dd</option>
+                                            <option value="default">01</option>
+                                            <option value="black">02</option>
+                                            <option value="orange">03</option>
+                                        </select>
+                                    </div>
+                                    <div class="year">
+                                        <select name="theme" id="start-month" class=" form-control  my-auto">
+                                            <option value="">yyyy</option>
+                                            <option value="default">1998</option>
+                                            <option value="black">1999</option>
+                                            <option value="orange">2000</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row enddate d-flex justify-content-between mt-2">
+                                    <div class="month">
+                                        <select name="theme" id="start-month" class=" form-control  my-auto">
+                                            <option value="">Month</option>
+                                            <option value="default">Default Theme</option>
+                                            <option value="black">Dark Gloss</option>
+                                            <option value="orange">Light Gloss</option>
+                                        </select>
+                                    </div>
+                                    <div class="date">
+                                        <select name="theme" id="start-month" class=" form-control  my-auto">
+                                            <option value="">dd</option>
+                                            <option value="default">Default Theme</option>
+                                            <option value="black">Dark Gloss</option>
+                                            <option value="orange">Light Gloss</option>
+                                        </select>
+                                    </div>
+                                    <div class="year">
+                                        <select name="theme" id="start-month" class=" form-control  my-auto">
+                                            <option value="">yyyy</option>
+                                            <option value="default">Default Theme</option>
+                                            <option value="black">Dark Gloss</option>
+                                            <option value="orange">Light Gloss</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section section-duration mr-5">
+                                <div class="row d-flex justify-content-between">
+                                    <h2 class="start">Duration</h2>
+                                    <h2 class="reset">Reset</h2>
+                                </div>
+                                <div class="row">
+                                    <h2 class="weeks">1 Weeks -10 Weeks</h2>
+                                </div>
+
+                                <div class="row">
+                                </div>
+
+                            </div>
+                            <div class="section mr-2">
+                                <div class="row d-flex justify-content-between">
+                                    <h2 class="start">Minimum Age</h2>
+                                </div>
+                                <div class="row">
+                                    <select name="theme" id="" class=" form-control  my-auto">
+                                        <option value="">--</option>
+                                        <option value="default">Default Theme</option>
+                                        <option value="black">Dark Gloss</option>
+                                        <option value="orange">Light Gloss</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <!-- </div> -->
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary mx-auto">See Results</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- result -->
+        <div class="result d-flex justify-content-between mt-4">
+            <div class="justify-content-start">
+                <h2>329 Results</h2>
+            </div>
+
+            <div class="d-flex">
+                <h3 class="mt-auto mb-auto">Sort By:</h3>
+                <div class="volunteer">
+                    <select name="theme" id="relevancy" class="form-control " tabindex="9">
+                        <option value="">Relevancy</option>
+                        <option value="default">Default Theme</option>
+                        <option value="black">Dark Gloss</option>
+                        <option value="orange">Light Gloss</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <!-- carousel -->
+  
+    <div class="carousel-content mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12" style="float:none;margin:0 auto;">
+                    <div class="owl-carousel owl-theme search-carousel" id="">
+
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="owl-carousel owl-theme search-carousel" id="">
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="owl-carousel owl-theme search-carousel" id="">
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="owl-carousel owl-theme search-carousel" id="">
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="owl-carousel owl-theme search-carousel" id="">
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="owl-carousel owl-theme search-carousel" id="">
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="main-body">
+                                <h1 class="project-name">medical voulnteering</h1>
+                            </div>
+                            <div class="sub-body">
+                                <h2 class="header">Volunteering with Tigers</h2>
+                                <p class="icon-body d-inline-flex">
+                                    <img src="images/volunteer-logo01.png" class="icon" alt="">
+                                    <span>love volunteer</span>
+
+                                </p>
+                                <h2 class="duration">
+                                    $512/Weeks <span>.</span> 1-12 weeks duration
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pagination -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">.....</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">12</a></li>
+
+        </ul>
+    </nav>
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container-fluid page-footer ">
+            <img src="images/logo_1.png" height="50" width="200" class="logo" />
+            <a href="ContactUs.html">CONTACT US</a>
+            <a href="FAQ.html">FAQ</a>
+        </div>
+    </footer>
+</body>
+
+</html>
