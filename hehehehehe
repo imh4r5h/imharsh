@@ -1,0 +1,199 @@
+USE [harshkumar]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_addUpdateProject]    Script Date: 13-02-2020 08:59:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Harsh Chaudhary
+-- Create date: 12/02/2020
+-- Description:	Add/Update Organization details
+-- =============================================
+--DECLARE @Get INT
+--exec usp_addUpdateProject 'Volunteer with tigers','9','3','1','2','tiger.png','20','60','4','3000','logotiger.png','work address','house address','airport address'
+--,'overview description','impact description','field description','start date description','videotigerqq.mp4','imagetiger.jpg,imagetiger2.jpg,imagetiger3.jpg,imagetiger4.jpg,imagetiger5.jpg','cost description','1,2,3,4','12-JAN-20',
+--'organization description',8,@Get OUTPUT
+--SELECT @Get
+ALTER PROCEDURE  [dbo].[usp_addUpdateProject] 
+	-- Add the parameters for the stored procedure here
+	@ProjectName VARCHAR(50),
+	@ProjectCityId INT,
+	@OrganizationId INT,
+	@CatagoryId INT,
+	@ActivityId INT,
+	@ProjectImage VARCHAR(50),
+	@MinAge INT,
+	@MaxAge INT,
+	@Duration INT,
+	@Cost DECIMAL(18,2),
+	@OrganizationLogo VARCHAR(50),
+	@WorkAddress VARCHAR(200),
+	@HouseAddress VARCHAR(200),
+	@AirportAddress VARCHAR(200),
+	@OverviewDescription VARCHAR(2000),
+	@ImpactDescription VARCHAR(2000),
+	@FieldDescription VARCHAR(2000),
+	@StartDateDescription VARCHAR(2000),
+	@VideoUrl VARCHAR(50),
+	@CarouselImages VARCHAR(500),
+	@CostDescription VARCHAR(2000),
+	@ProjectIncludedThingsId VARCHAR(500),
+	@ProjectStartDates VARCHAR(500),
+	@OrganizationDescription VARCHAR(2000),
+	@ProjectID INT=0,
+	@Status INT OUTPUT,
+    @LastId INT=0
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	DECLARE @date DATETIME;
+	SET @date=GETUTCDATE();
+    -- Insert statements for procedure here
+	IF(@ProjectID=0)
+	BEGIN
+	  INSERT INTO tblProjects
+	  VALUES
+	  (@OrganizationId,@CatagoryId,@ActivityId,
+	   @ProjectName,@ProjectImage,@MinAge,@MaxAge,
+	   @OverviewDescription,@FieldDescription,
+	   @ImpactDescription,@VideoUrl,@StartDateDescription,
+	   @CostDescription,@ProjectCityId,@HouseAddress,@WorkAddress,
+	   @AirportAddress,1,GETUTCDATE(),GETUTCDATE());
+	  
+	  SET @LastId=SCOPE_IDENTITY();
+
+	  INSERT INTO tblProjectDates
+	  SELECT @LastId,Item,@date,@date from SplitString(@ProjectStartDates,',');
+
+	  INSERT INTO tblInclude
+	  SELECT @LastId,Item,@date,@date from SplitString(@ProjectIncludedThingsId,',')
+	  
+	  INSERT INTO tblProjectCarousel
+	  SELECT @LastId,Item,@date,@date FROM SplitString(@CarouselImages,',')
+
+	  INSERT INTO tblCost 
+	  VALUES(@LastId,@Cost,@Duration,GETUTCDATE(),GETUTCDATE());
+
+	  IF(@@ROWCOUNT>0)
+	     SET @Status=1
+	  ELSE
+	     SET @Status=2
+	END
+	ELSE
+	BEGIN
+	   UPDATE tblProjects
+	   SET
+	   organization_id=@OrganizationId,
+	   catagory_id=@CatagoryId,
+	   activity_id=@ActivityId,
+	   title=@ProjectName,
+	   header_image=@ProjectImage,
+	   min_age=@MinAge,
+	   max_age=@MaxAge,
+	   overview_description=@OverviewDescription,
+	   field_description=@FieldDescription,
+	   impact_description=@ImpactDescription,
+	   video_url=@VideoUrl,
+	   start_date_description=@StartDateDescription,
+	   cost_description=@CostDescription,
+	   city_id=@ProjectCityId,
+	   house_address=@HouseAddress,
+	   work_address=@WorkAddress,
+	   airport_address=@AirportAddress,
+	   updated_date=GETUTCDATE()
+	   WHERE id=@ProjectID AND isActive=1;
+
+	   DELETE FROM tblProjectDates WHERE dates NOT IN(SELECT Item FROM SplitString(@ProjectStartDates,',')) AND project_id=@ProjectID;
+	   
+	   INSERT INTO tblProjectDates 
+	   SELECT @ProjectID,Item,@date,@date FROM SplitString(@ProjectStartDates,',') WHERE Item NOT IN(SELECT dates FROM tblProjectDates WHERE project_id=@ProjectID);
+	   
+
+	   DELETE FROM tblInclude WHERE master_include_id NOT IN(SELECT Item FROM SplitString(@ProjectIncludedThingsId,',')) AND project_id=@ProjectID;
+	   
+	   INSERT INTO tblInclude 
+	   SELECT @ProjectID,Item,@date,@date FROM SplitString(@ProjectIncludedThingsId,',') WHERE Item NOT IN(SELECT master_include_id FROM tblInclude WHERE project_id=@ProjectID);
+
+
+	   DELETE FROM tblProjectCarousel WHERE IMAGE NOT IN(SELECT Item FROM SplitString(@CarouselImages,',')) AND project_id=@ProjectID;
+
+       INSERT INTO tblProjectCarousel 
+	   SELECT @ProjectID,Item,@date,@date FROM SplitString(@CarouselImages,',') WHERE Item NOT IN(SELECT IMAGE FROM tblProjectCarousel WHERE project_id=@ProjectID);
+	   
+	   UPDATE tblCost
+	   SET
+	   cost=@Cost,
+	   weeks=@Duration
+	   WHERE project_id=@ProjectID;
+
+	   UPDATE tblOrganizations
+	   SET
+	   description=@OrganizationDescription
+	   WHERE id=@OrganizationId;
+
+	   IF(@@ROWCOUNT>0)
+	     SET @Status=1
+	  ELSE
+	     SET @Status=2
+
+	END
+END
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+USE [harshkumar]
+GO
+/****** Object:  StoredProcedure [dbo].[u_getProjectsByFilter]    Script Date: 13-02-2020 08:59:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+--exec u_getProjectsByFilter '1,2,3',2,1,'20-JAN-20','20-JAN-20',2,3,12;
+ALTER PROCEDURE [dbo].[u_getProjectsByFilter]  
+	-- Add the parameters for the stored procedure here
+	@CatagoryIds VARCHAR(500),
+	@CountryId INT,
+	@ActivityId INT,
+	@StartDateFrom DATE,
+	@StartDateTo DATE,
+	@DurationFrom INT,
+	@DurationTo INT,
+	@MinAge INT,
+	@PageNo INT=1,
+	@RecordPerPage INT=2
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+    -- Insert statements for procedure here
+	
+
+	SELECT 
+	distinct(p.id),P.title AS 'project name',o.name AS 'organization name',
+	cost.cost,cost.weeks AS 'Duration',
+	STUFF(
+	     (SELECT distinct ',' + ca1.image FROM tblProjectCarousel ca1  
+		 WHERE ca1.project_id=c.project_id 
+	     FOR XML PATH('')), 1,1,'') as images 
+	FROM tblProjects AS p 
+	INNER JOIN tblOrganizations AS o ON p.organization_id=o.id
+	INNER JOIN tblCost AS cost ON cost.project_id=p.id 
+	INNER JOIN tblProjectCarousel AS c ON c.project_id=p.id
+	INNER JOIN tblProjectDates AS date ON date.project_id=p.id
+	INNER JOIN tblCity AS city 
+	INNER JOIN tblCountries AS country ON country.id=city.country_id ON p.city_id=city.id
+	WHERE p.isActive='true' AND p.catagory_id IN (SELECT CAST(Item AS INTEGER) FROM SplitString(@CatagoryIds, ',')) AND country.id=@CountryId AND p.activity_id=@ActivityId AND date.dates>=@StartDateFrom AND date.dates<=@StartDateTo AND cost.weeks>=@DurationFrom AND cost.weeks<=@DurationTo AND p.min_age>=@MinAge
+	ORDER BY p.id  OFFSET ((@PageNo-1)*@RecordPerPage) ROWS
+	FETCH NEXT @RecordPerPage ROWS ONLY;
+	
+END
