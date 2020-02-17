@@ -1,0 +1,49 @@
+function filterApplier() {
+    var counter = 1;
+    if ($('#customCheck1').is(":checked") || $('#customCheck2').is(":checked") || $('#customCheck3').is(":checked")) {
+        counter++;
+    }
+    if ($('#country').val() != "") {
+        counter++;
+    }
+    if ($('#activity').val() != "") {
+        counter++;
+    }
+    if ($('#age').val() != "") {
+        counter++;
+    }
+    
+    var flag = false;
+    var str = ["start-year", "start-date", "start-month"]
+    for (i = 0; i < str.length; i++) {
+
+        if ($("#"+str[i]).val() == "") {
+            flag = false;
+            break;
+        }
+        else {
+            flag = true;
+        }
+    }
+    if (flag == true) {
+        counter++;
+    }
+
+    var str = ["end-year", "end-date", "end-month"]
+    for (i = 0; i < str.length; i++) {
+
+        if ($("#" + str[i]).val() == "") {
+            flag = false;
+            break;
+        }
+        else {
+            flag = true;
+        }
+    }
+    if (flag == true) {
+        counter++;
+    }
+
+    $('#badge').html(counter);
+
+}
