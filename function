@@ -1,0 +1,19 @@
+ALTER FUNCTION [dbo].[Cost]
+(
+	-- Add the parameters for the function here
+	@Duration INT,
+	@ProjectId INT
+)
+RETURNS DECIMAL(18,2)
+AS
+BEGIN
+	
+	DECLARE @Cost DECIMAL(18,2);
+	DECLARE @ProjectDuration INT;
+	DECLARE @GeneratedCost DECIMAL(18,2);
+	SET @Cost=(SELECT cost from tblCost WHERE project_id=@ProjectId);
+	SET @ProjectDuration =(SELECT weeks from tblCost WHERE project_id=@ProjectId);
+	SET @GeneratedCost=(@Cost/@ProjectDuration)*@Duration;
+	RETURN @GeneratedCost;
+
+END
