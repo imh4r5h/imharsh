@@ -1,0 +1,24 @@
+SET NOCOUNT ON
+DECLARE @Id INT
+DECLARE @FullName VARCHAR(50)
+DECLARE @Duration INT
+DECLARE @Email VARCHAR(50)
+DECLARE @Phone VARCHAR(15)
+DECLARE @ProjectId INT
+ DECLARE cur_application CURSOR
+STATIC FOR 
+SELECT id,full_name,duration,email_id,phone,project_id from tblApplicants
+OPEN cur_application
+IF @@CURSOR_ROWS > 0
+ BEGIN 
+ FETCH NEXT FROM cur_application INTO @Id,@FullName,@Duration,@Email,@Phone,@ProjectId
+ WHILE @@Fetch_status = 0
+ BEGIN
+ PRINT 'ID : '+ convert(varchar(50),@Id)+', Name : '+@FullName+
+ ', duration :'+convert(varchar(50),@Duration)+', email :'+convert(VARCHAR(50),@Email)+', phone:'+convert(VARCHAR(15),@Phone)+', project id'+convert(VARCHAR(50),@ProjectId)
+ FETCH NEXT FROM cur_application INTO @Id,@FullName,@Duration,@Email,@Phone,@ProjectId
+ END
+END
+CLOSE cur_application
+DEALLOCATE cur_application
+SET NOCOUNT OFF 
