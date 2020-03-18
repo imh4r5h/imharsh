@@ -1,0 +1,490 @@
+namespace Assignment12.Models
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    public class Functions
+    {
+        projectsEntities entities = new projectsEntities();
+        public IEnumerable<CustomModelTrending> GetTrendingProjects()
+        {
+            var list = (from p in entities.tblProjects
+                        join c in entities.tblCities on p.city_id equals c.id
+                        join d in entities.tblCountries on c.country_id equals d.id
+                        join o in entities.tblOrganizations on p.organization_id equals o.id
+                        join v in entities.tblProjectVisits on p.id equals v.project_id
+                        where p.isActive == true
+                        orderby entities.tblProjects.Where(x => x.title != null && x.id.Equals(p.id)).Count() ascending
+                        group new { p, o, d } by p.id into g
+                        select new
+                        {
+                            a = g.ToList()
+                        });
+            var list2 = list.Select(g => new CustomModelTrending
+            {
+                id = g.a.Select(x => x.p.id).FirstOrDefault(),
+                name = g.a.Select(x => x.p.title).FirstOrDefault(),
+                organization_name = g.a.Select(x => x.o.name).FirstOrDefault(),
+                country_name = g.a.Select(x => x.d.name).FirstOrDefault(),
+                image = g.a.Select(x => x.d.image).FirstOrDefault()
+            });
+            return list2;
+        }
+        public IEnumerable<CustomModelProjectCountWithCountry> GetDestinations()
+        {
+            var list = (from d in entities.tblCountries
+                        join c in entities.tblCities on d.id equals c.country_id
+                        join p in entities.tblProjects on c.id equals p.city_id
+                        where p.isActive == true
+                        group new { d, p } by new { d.id } into g
+
+                        select new
+                        {
+                            a = g.ToList()
+                        });
+
+            var list2 = list.Select(g => new CustomModelProjectCountWithCountry
+            {
+                id = g.a.Select(x => x.d.id).FirstOrDefault(),
+                name = g.a.Select(x => x.d.name).FirstOrDefault(),
+                image = g.a.Select(x => x.d.image).FirstOrDefault()
+            });
+            return list2;
+        }
+        public IEnumerable<CustomModelProjectBasedOnCost> GetAffordableProjects()
+        {
+            var list = (from p in entities.tblProjects
+                        join c in entities.tblCosts on p.id equals c.project_id
+                        join city in entities.tblCities on p.city_id equals city.id
+                        join country in entities.tblCountries on city.country_id equals country.id
+                        join o in entities.tblOrganizations on p.organization_id equals o.id
+                        where p.isActive == true
+                        orderby c.cost
+                        select new CustomModelProjectBasedOnCost()
+                        {
+                            id = p.id,
+                            name = p.title,
+                            cost = c.cost,
+                            duration = c.weeks,
+                            organization_name = o.name,
+                            image = p.header_image
+                        });
+            return list;
+        }
+        public IEnumerable<tblCountry> SearchCountry(string name)
+        {
+            var list = (from country in entities.tblCountries
+                        where country.name.Equals(name)
+                        select new tblCountry()
+                        {
+                            id = country.id,
+                            name = country.name
+                        });
+            return list;
+        }
+        public IEnumerable<CustomModelProjectDetail> GetProjectDetail(int pid)
+        {
+            var list = (from p in entities.tblProjects
+                        join i in entities.tblIncludes on p.id equals i.project_id
+                        join city in entities.tblCities on p.city_id equals city.id
+                        join country in entities.tblCountries on city.country_id equals country.id
+                        join organization in entities.tblOrganizations on p.organization_id equals organization.id
+                        join cost in entities.tblCosts on p.id equals cost.project_id
+                        join date in entities.tblProjectDates on p.id equals date.project_id
+                        where p.id.Equals(pid)
+                        select new CustomModelProjectDetail
+                        {
+                            id = p.id,
+                            project_name = p.title,
+                            country = country.name,
+                            city = city.name,
+                            organization = organization.name,
+                            min_age = p.min_age,
+                            max_age = p.max_age,
+                            duration = cost.weeks,
+                            cost = cost.cost,
+                            logo = organization.logo,
+                            work_address = p.work_address,
+                            house_address = p.house_address,
+                            airport_address = p.airport_address,
+                            overview_description = p.overview_description,
+                            impact_description = p.impact_description,
+                            field_description = p.field_description,
+                            video_url = p.video_url,
+                            cost_description = p.cost_description,
+                            project_dates = date.dates.ToString(),
+                            included = "a,b",
+                            not_included = "c,d",
+                            organization_description = organization.description
+                        }).AsEnumerable();
+
+            return list;
+        }
+        public void ApplyForProject(string Name, int ProjectId, DateTime ProjectStartDate, int Duration, string Email, string Phone)
+        {
+            tblApplicant applicant = new tblApplicant();
+            applicant.full_name = Name;
+            applicant.project_id = ProjectId;
+            applicant.project_start_date = ProjectStartDate;
+            applicant.duration = Duration;
+            applicant.email_id = Email;
+            applicant.phone = Phone;
+            applicant.created_date = DateTime.Now;
+            entities.tblApplicants.Add(applicant);
+            entities.SaveChanges();
+        }
+        public bool Login(string username, string password)
+        {
+            return entities.tblUsers.Where(x => x.username.Equals(username) && x.password.Equals(password)).Any();
+        }
+        public IEnumerable<CustomModelProjectDetail> GetProjectList()
+        {
+            var list = (from p in entities.tblProjects
+                        join city in entities.tblCities on p.city_id equals city.id
+                        join country in entities.tblCountries on city.country_id equals country.id
+                        where p.isActive == true
+                        select new CustomModelProjectDetail
+                        {
+                            id = p.id,
+                            project_name = p.title,
+                            city = city.name,
+                            country = country.name,
+                        }).AsEnumerable();
+            return list;
+        }
+        public void AddProject(string title, int city_id, int organization_id, int catagory_id, int activity_id, string header_image, int min_age, int max_age, int duration, decimal cost, string work_address, string house_address, string airport_address, string overview_description, string impact_description, string field_description, string start_date_description, string video_url, string images, string cost_description, string included, string dates, int id)
+        {
+            tblProject project = new tblProject();
+            tblCost Cost = new tblCost();
+            tblInclude include = new tblInclude();
+            tblProjectCarousel carousel = new tblProjectCarousel();
+            tblProjectDate date = new tblProjectDate();
+            project.title = title;
+            project.city_id = city_id;
+            project.organization_id = organization_id;
+            project.catagory_id = catagory_id;
+            project.activity_id = activity_id;
+            project.header_image = header_image;
+            project.min_age = min_age;
+            project.max_age = max_age;
+            project.work_address = work_address;
+            project.house_address = house_address;
+            project.airport_address = airport_address;
+            project.overview_description = overview_description;
+            project.impact_description = impact_description;
+            project.field_description = field_description;
+            project.start_date_description = start_date_description;
+            project.video_url = video_url;
+            project.cost_description = cost_description;
+            project.created_date = DateTime.Now;
+            project.isActive = true;
+            entities.tblProjects.Add(project);
+            entities.SaveChanges();
+            Cost.project_id = project.id;
+            Cost.cost = cost;
+            Cost.weeks = duration;
+            Cost.created_date = DateTime.Now;
+            entities.tblCosts.Add(Cost);
+            foreach (string item in included.Split(','))
+            {
+                include.master_include_id = Convert.ToInt32(item);
+                include.project_id = project.id;
+                include.created_date = DateTime.Now;
+                entities.tblIncludes.Add(include);
+            }
+            foreach (string item in images.Split(','))
+            {
+                carousel.project_id = project.id;
+                carousel.image = item;
+                carousel.created_date = DateTime.Now;
+                entities.tblProjectCarousels.Add(carousel);
+            }
+            foreach (string item in dates.Split(','))
+            {
+                date.project_id = project.id;
+                date.dates = DateTime.Parse(item);
+                date.created_date = DateTime.Now;
+                entities.tblProjectDates.Add(date);
+            }
+            entities.SaveChanges();
+        }
+        public void DeleteProject(int id)
+        {
+            var list = (from p in entities.tblProjects
+                        where p.id.Equals(id)
+                        select p).FirstOrDefault();
+            list.isActive = false;
+            entities.SaveChanges();
+        }
+
+        public IEnumerable<CustomModelOrganization> GetOrganizations()
+        {
+            var list = (from i in entities.tblOrganizations
+                        where i.isActive == true
+                        select new CustomModelOrganization
+                        {
+                            Id = i.id,
+                            Name = i.name
+                        }
+                ).AsEnumerable();
+            return list;
+        }
+
+        private tblOrganization MapOrganization(tblOrganization org, CustomModelOrganization organization)
+        {
+            org.name = organization.Name;
+            org.logo = organization.Logo;
+            org.user_id = organization.User_id;
+            org.website = organization.Website;
+            org.contact_name = organization.Contact_name;
+            org.description = organization.Description;
+            org.video = organization.Video;
+            org.email = organization.Email;
+
+            org.isActive = true;
+            return org;
+        }
+
+
+        public void AddOrganization(CustomModelOrganization organization)
+        {
+            if (organization.Id == 0)
+            {
+                tblOrganization org = new tblOrganization();
+                org.created_date = DateTime.Now;
+                org = MapOrganization(org, organization);
+                entities.tblOrganizations.Add(org);
+                entities.SaveChanges();
+            }
+            else
+            {
+                var list = (from o in entities.tblOrganizations where o.id.Equals(organization.Id) select o).FirstOrDefault();
+                list.updated_date = DateTime.Now;
+                list = MapOrganization(list, organization);
+                entities.SaveChanges();
+            }
+        }
+
+
+
+        public void DeleteOrganization(int id)
+        {
+            var list = (from o in entities.tblOrganizations
+                        where o.id.Equals(id)
+                        select o
+                ).FirstOrDefault();
+            list.isActive = false;
+
+            var Plist = (from p in entities.tblProjects
+                         where p.organization_id.Equals(id)
+                         select p).FirstOrDefault();
+            if (Plist != null)
+            {
+                Plist.isActive = false;
+            }
+            entities.SaveChanges();
+        }
+        public IEnumerable<CustomModelApplication> GetApplication()
+        {
+            var list = (from i in entities.tblApplicants
+                        join p in entities.tblProjects on i.project_id equals p.id
+                        select new CustomModelApplication
+                        {
+                            id = i.id,
+                            full_name = i.full_name,
+                            email_id = i.email_id,
+                            phone = i.phone,
+                            project_start_date = i.project_start_date,
+                            duration = i.duration,
+                            title = p.title
+                        }
+                ).AsEnumerable();
+            return list;
+        }
+
+        public void EditApplication(int id, string full_name, DateTime project_start_date, int duration, string email_id, string phone)
+        {
+            var list = (from a in entities.tblApplicants
+                        where a.id.Equals(id)
+                        select a
+                ).FirstOrDefault();
+            list.full_name = full_name;
+            list.project_start_date = project_start_date;
+            list.duration = duration;
+            list.email_id = email_id;
+            list.phone = phone;
+            entities.SaveChanges();
+        }
+
+        public void DeleteApplication(int id)
+        {
+            var list = (from a in entities.tblApplicants
+                        where a.id.Equals(id)
+                        select a
+                ).FirstOrDefault();
+            entities.tblApplicants.Remove(list);
+            entities.SaveChanges();
+        }
+
+        public IEnumerable<CustomModelFaq> GetFaqs()
+        {
+            var list = (from f in entities.tblFaqs
+                        select new CustomModelFaq
+                        {
+                            Id = f.id,
+                            Question = f.question,
+                            Answer = f.answer,
+                            Sequence_number = f.sequence_number
+                        }
+                ).AsEnumerable();
+            return list;
+        }
+
+        private tblFaq MapFaq(tblFaq faq, CustomModelFaq cfaq)
+        {
+            faq.question = cfaq.Question;
+            faq.answer = cfaq.Answer;
+            faq.sequence_number = cfaq.Sequence_number;
+            faq.created_date = DateTime.Now;
+            return faq;
+        }
+
+        public void AddEditFaq(CustomModelFaq cfaq)
+        {
+            tblFaq faq = new tblFaq();
+            if (cfaq.Id == 0)
+            {
+                faq = MapFaq(faq, cfaq);
+                entities.tblFaqs.Add(faq);
+                entities.SaveChanges();
+            }
+            else
+            {
+                var list = (from f in entities.tblFaqs where f.id.Equals(cfaq.Id) select f).FirstOrDefault();
+                list = MapFaq(faq, cfaq);
+                entities.SaveChanges();
+            }
+        }
+
+        public void AddInquiry(string name, string email, string message)
+        {
+            tblContactu contact = new tblContactu();
+            contact.name = name;
+            contact.email_id = email;
+            contact.message = message;
+            contact.created_date = DateTime.Now;
+            entities.tblContactus.Add(contact);
+            entities.SaveChanges();
+        }
+
+        public IEnumerable<CustomModelActivity> GetActivity()
+        {
+            var list = (from a in entities.tblActivities
+                        select new CustomModelActivity
+                        {
+                            Id = a.id,
+                            Name = a.name
+                        }).AsEnumerable();
+            return list;
+        }
+
+        public void DeleteActivity(int id)
+        {
+            var list = (from a in entities.tblActivities where a.id.Equals(id) select a).FirstOrDefault();
+            entities.tblActivities.Remove(list);
+            entities.SaveChanges();
+        }
+
+        public void AddActivity(string name)
+        {
+            tblActivity activity = new tblActivity();
+            activity.name = name;
+            activity.created_date = DateTime.Now;
+            entities.tblActivities.Add(activity);
+            entities.SaveChanges();
+        }
+
+        public IEnumerable<CustomModelCatagory> GetCatagory()
+        {
+            var list = (from c in entities.tblCatagories
+                        select new CustomModelCatagory
+                        {
+                            Id = c.id,
+                            Name = c.name
+                        }).AsEnumerable();
+            return list;
+        }
+
+        public void DeleteCatagory(int id)
+        {
+            var list = (from c in entities.tblCatagories where c.id.Equals(id) select c).FirstOrDefault();
+            entities.tblCatagories.Remove(list);
+            entities.SaveChanges();
+        }
+
+        public void AddCatagory(string name)
+        {
+            tblCatagory catagory = new tblCatagory();
+            catagory.name = name;
+            catagory.created_date = DateTime.Now;
+            entities.tblCatagories.Add(catagory);
+            entities.SaveChanges();
+        }
+
+        public IEnumerable<CustomModelCountry> GetCountry()
+        {
+            var list = (from c in entities.tblCountries
+                        select new CustomModelCountry
+                        {
+                            Id = c.id,
+                            Name = c.name
+                        }).AsEnumerable();
+            return list;
+        }
+
+        public void DeleteCountry(int id)
+        {
+            var list = (from c in entities.tblCountries where c.id.Equals(id) select c).FirstOrDefault();
+            entities.tblCountries.Remove(list);
+            entities.SaveChanges();
+        }
+
+        public void AddCountry(string Name, string Image)
+        {
+            tblCountry country = new tblCountry();
+            country.name = Name;
+            country.image = Image;
+            country.created_date = DateTime.Now;
+            entities.tblCountries.Add(country);
+            entities.SaveChanges();
+        }
+
+        public IEnumerable<CustomModelSearch> SearchProjects(string catagory_id, int country_id, int activity_id, DateTime startDate, DateTime endDate, int startDuration, int endDuration, int minAge)
+        {
+            var list = (from p in entities.tblProjects
+                        join o in entities.tblOrganizations on p.organization_id equals o.id
+                        join cost in entities.tblCosts on p.id equals cost.project_id
+                        join carousel in entities.tblProjectCarousels on p.id equals carousel.project_id
+                        join date in entities.tblProjectDates on p.id equals date.project_id
+                        join city in entities.tblCities on p.city_id equals city.id
+                        join country in entities.tblCountries on city.country_id equals country.id
+                        where p.isActive == true
+                        && p.activity_id.Equals(activity_id.Equals(null) ? p.activity_id : activity_id)
+                        && country.id.Equals(country_id.Equals(null) ? country.id : country_id)
+                        && date.dates >= (startDate.Equals(null) ? date.dates : startDate)
+                        && date.dates <= (endDate.Equals(null) ? date.dates : endDate)
+                        && cost.weeks >= (startDuration.Equals(null) ? cost.weeks : startDuration)
+                        && p.min_age >= (minAge.Equals(null) ? p.min_age : minAge)
+                        select new CustomModelSearch
+                        {
+                            id = p.id,
+                            project_name = p.title,
+                            organization_name = o.name,
+                            cost = cost.cost,
+                            Duration = cost.weeks
+                        }
+                        ).AsEnumerable();
+            return list;
+        }
+    }
+}
