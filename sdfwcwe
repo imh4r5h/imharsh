@@ -1,0 +1,29 @@
+ public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+                var message = new StringBuilder();
+                message.Append(string.Format("Executing controller {0}, action {1}",
+                filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,
+                filterContext.ActionDescriptor.ActionName));
+                Add(message.ToString());
+        }
+
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+                var message = new StringBuilder();
+                message.Append(string.Format("Finished executing controller {0}, action {1} ", filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,
+                filterContext.ActionDescriptor.ActionName));
+                Add(message.ToString());
+        }
+        
+        public void Add(string Message)
+        {
+            string path = $"{AppDomain.CurrentDomain.BaseDirectory}\\logs\\info\\{DateTime.Now.Year}\\{DateTime.Now.Month.ToString()}";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            using (StreamWriter writer = File.AppendText($"{path}\\{DateTime.Now.DayOfWeek}.txt"))
+            {
+                writer.WriteLine(Message);
+            }
+        }
